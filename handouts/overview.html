@@ -1,0 +1,1010 @@
+<head>
+
+<title>CS109</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+
+<link href="../plugins/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+<!-- Java Script -->
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/moment.min.js"></script>
+<script src="../plugins/bootstrap-custom/js/bootstrap.min.js"></script>
+<script src="../plugins/ace/ace.js" type="text/javascript"></script>
+
+<!-- Probability Packages -->
+<script src="../plugins/probability/gaussian.js"></script>
+<script src="../plugins/color.js"></script>
+
+
+<!-- Stanford -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand brand" href="../">CS109</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lectures <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+          </ul>
+        </li>-->
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lecture Notes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../pdfs/02 Counting.pdf">2 - Counting</a></li>
+            <li><a href="../pdfs/03 CalculationRef.pdf">3 - Calculation Ref</a></li>
+            <li><a href="../pdfs/05 Combinatorics.pdf">5 - Combinatorics</a></li>
+            <li><a href="../pdfs/06 Probability.pdf">6 - Probability</a></li>
+            <li><a href="../pdfs/07 CondProbability.pdf">7 - Conditional Probability</a></li>
+            <li><a href="../pdfs/08 Independence.pdf">8 - Independence</a></li>
+            <li><a href="../pdfs/10 Random Variables.pdf">10 - Random Variables</a></li>
+            <li><a href="../pdfs/11 Variance.pdf">11 - Variance</a></li>
+            <li><a href="../pdfs/12 Poisson.pdf">12 - Poisson and More</a></li>
+
+            <li><a href="../pdfs/13 Continuous.pdf">13 - Continuous RV</a></li>
+            <li><a href="../pdfs/16 Gaussian.pdf">16 - Gaussian</a></li>
+            <li><a href="../pdfs/17 StandardNormalTable.pdf">17 - Standard Normal</a></li>
+            <li><a href="../pdfs/18 Joint.pdf">18 - Joint Distributions</a></li>
+            <li><a href="../pdfs/19 MoreJointProperties.pdf">19 - More Joint Properties</a></li>
+            <li><a href="../pdfs/20 ConvolutionAndConditional.pdf">20 - Convolution and Conditional</a></li>
+            <li><a href="../pdfs/22 Beta.pdf">22 - Beta Distributions</a></li>
+            <li><a href="../pdfs/27 VarianceFromEvents.pdf">27 - Variance From Events</a></li>
+            <li><a href="../pdfs/28 CovarianceAndSamples.pdf">28 - Covariance and Samples</a></li>
+            <li><a href="../pdfs/29 Correlation.pdf">29 - Correlation</a></li>
+            <li><a href="../pdfs/30 CondExpectation.pdf">30 - Conditional Expectation</a></li>
+            <li><a href="../pdfs/31 CentralTheorems.pdf">31 - Central Theorems</a></li>
+            <li><a href="../pdfs/34 ParameterEstimation.pdf">34 - Parameter Estimation</a></li>
+            <li><a href="../pdfs/35 MaximumLikelihood.pdf">35 - Maximum Likelihood</a></li>
+            <li><a href="../pdfs/37 MaximumAPosteriori.pdf">37 - Maximum A Posteriori</a></li>
+
+            <li><a href="../pdfs/39 NaiveBayes.pdf">39 - Naive Bayes</a></li>
+
+            <li><a href="../pdfs/40 LogisticRegression.pdf">40 - Logistic Regression</a></li>
+            <li><a href="../pdfs/41 DeepLearning.pdf">41 - Deep Learning</a></li>
+            
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Problem Sets<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../pdfs/04 ProblemSet1.pdf">Problem Set 1</a></li>
+            <li><a href="../pdfs/09 ProblemSet2.pdf">Problem Set 2</a></li>
+            <li><a href="../pdfs/15 ProblemSet3.pdf">Problem Set 3</a></li>
+            <li><a href="../pdfs/23 ProblemSet4.pdf">Problem Set 4</a></li>
+            <li><a href="../pdfs/32 ProblemSet5.pdf">Problem Set 5</a></li>
+            <li><a href="../pdfs/38 ProblemSet6.pdf">Problem Set 6</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li><a href="../pdfs/01 Administrivia.pdf">Administrivia</a></li>
+           <!--<li><a href="../pdfs/01 Administrivia.pdf">Lecture Notes Errata</a></li>-->
+           <li><a href="../pdfs/17 StandardNormalTable.pdf">Standard Normal (Phi)</a></li>
+           <li><a href="../pdfs/21 PracticeMidterm.pdf">Practice Midterm</a></li>
+           <li><a href="../pdfs/24 PracticeMidtermSoln.pdf">Practice Midterm Soln</a></li>
+           <li><a href="../pdfs/26 MidtermReviewSession.pdf">Midterm Review Session</a></li>
+           <li><a href="../pdfs/25 Notation.pdf">Notation Reference</a></li>
+           <li><a href="../handouts/videoExamples.html">Video Examples</a></li>
+           <li><a href="../problem12.html">Titanic Dataset</a></li>
+           <li><a href="../handouts/datasets.html">Machine Learning Datasets</a></li>
+           <li><a href="../pdfs/42 PracticeFinal.pdf">Practice Final</a></li>
+           <li><a href="../pdfs/43 PracticeFinalSoln.pdf">Practice Final Soln</a></li>
+           <li><a href="../handouts/extraProblems.html">Extra Practice Problems</a></li>
+           <!--<li><a href="../pdfs/01 Administrivia.pdf">Midterm Info</a></li>-->
+
+          </ul>
+        </li>
+
+
+
+        
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../demos/serendipity.html">Serendipity</a></li>
+            <li><a href="../demos/naturalBayes.html">Medical Tests</a></li>
+            <li><a href="../demos/jurors.html">Representative Juries</a></li>
+            <li><a href="../demos/cdf.html">Normal Calculator</a></li>
+            <li><a href="../demos/imageDist.html">CS109 Logo</a></li>
+            <li><a href="../demos/beta.html">Beta</a></li>
+            <li><a href="../demos/likelihood/">Likelihood</a></li>
+           <!--<li><a href=""><i>None yet!</i></a></li>-->
+
+          </ul>
+        </li>
+
+        <li><a href="../handouts/staff.html">Office Hours</a></li>
+       
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="..//handouts/overview.html"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Overview</a></li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Course Overview
+					</h1>
+					<p>
+						Created by Chris Piech
+					</p>
+					
+
+				</div>
+				<hr/>
+
+
+
+				<center>
+					<!--<img style="width:80%" src="../img/overview/overview.png">-->	
+				</center>
+			</div>
+		</div>
+
+			
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					The class starts by providing a fundamental grounding in combinatorics, and then quickly
+moves into the basics of probability theory. We will then cover many essential concepts
+in probability theory, including particular probability distributions, properties of
+probabilities, and mathematical tools for analyzing probabilities. Finally, the last third of
+the class will focus on data analysis and Machine Learning as a means for seeing direct
+applications of probability in this exciting and quickly growing subfield of computer
+science.
+				</p>
+
+				<hr/>
+			</div>
+		</div>
+		
+		
+				
+		<div class="row">
+			<div class="col-sm-12">
+
+				<div class="alert alert-success">
+					<b>Note on videos</b>: By popular demand we are making videos of CS109 classes. Our intention is for the videos to be an extra feature we produce as staff to make the class a better experience (were all about the better experience). This quarter CS109 is not "SCPD" so we are not professionally recorded. You can expect for videos to be uploaded within 24 hours of class. The videos are hosted by YouTube but are unlisted (only people with the link can find them).
+				</div>
+
+				<div class="alert alert-success">
+					<b>Note on slides</b>: In class I sometimes use slides to facilitate lecture. On their own they are not a great study resource. Here is a <a href="../ppt">link to the slides directory</a> in case you have use for them.
+				</div>
+
+				<h2>
+					Schedule
+				</h2>
+				<p>
+					The schedule is subject to change by the management at any time with high probability.
+				</p>
+				<p>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th style="col-xs-1">Date</th>
+								<th class="col-xs-3">Topic</th>
+								<th class="col-xs-2">Files</th>
+								<th class="col-xs-3">Reading</th>
+								<th class="col-xs-3">Assignment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th colspan = "6"><b>
+								<br/>[Counting]</b></th>
+							</tr>
+
+							<!-- 1 -->
+							<tr class="overviewRow">
+								<td>Mar 28</td>
+								<td>
+									Counting
+								</td>
+								<td>
+									<a href="..//pdfs/02 Counting.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="..//ppt/1-Welcome.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+									
+								</td>
+								<td>Chapter 1.1 - 1.2</td>
+								<td></td>
+							</tr>
+
+							<!-- 2 -->
+							<tr class="overviewRow">
+								<td>Mar 30</td>
+								<td>
+									Permutations and Combinations
+								</td>
+								<td>
+									<a href="..//pdfs/05 Combinatorics.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/EC9ZXD6mebo"><span class="overviewIcon glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/2-Combinatorics.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 1.3 - 1.6</td>
+								<td></td>
+							</tr>
+							
+							<tr>
+								<th colspan = "6"><b>
+								<br/>[Core Probability]</b></th>
+							</tr>
+
+							<!-- 3 -->
+							<tr class="overviewRow">
+								<td>Apr 1</td>
+								<td>
+									Axioms of Probability
+								</td>
+								<td>
+
+									<a href="..//pdfs/06 Probability.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/oYXYLljkC48"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+								
+
+									<a href="..//ppt/3-IntroProbability.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+										<a href="../demos/serendipity.html"><span class="glyphicon glyphicon-leaf" title="demo" aria-hidden="true"></span></a>
+
+									
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 2.1-2.5, 2.7</td>
+								<td></td>
+							</tr>
+
+							<!-- 4 -->
+							<tr class="overviewRow">
+								<td>Apr 4</td>
+								<td>
+									Conditional Probability, Bayes Theorem
+								</td>
+								<td>
+									<a href="..//pdfs/07 CondProbability.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/wB0z0nQebNc"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									
+
+									<a href="..//ppt/4-ConditionalProbability.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../demos/naturalBayes.html"><span class="glyphicon glyphicon-leaf" title="demo" aria-hidden="true"></span></a>
+								</td>
+								<td>Chapter 3.1-3.3</td>
+								<td></td>
+							</tr>
+
+							<!-- 5 -->
+							<tr class="overviewRow">
+								<td>Apr 6</td>
+								<td>
+									Independence
+								</td>
+								<td>
+
+									<a href="..//pdfs/08 Independence.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/CJ8GuZZBc40"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/5-Independence.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 3.4-3.5</td>
+								<td></td>
+							</tr>
+
+
+
+							<!-- 6 -->
+							<tr class="overviewRow">
+								<td>Apr 8</td>
+								<td>
+									Random Variables, Expectation
+								</td>
+								<td>
+
+									<a href="..//pdfs/10 Random Variables.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/bX7iqWlzC0c"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/6-RandomVariables.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 4.1-4.4</td>
+								<td>Due: PSet #1</td>
+							</tr>
+
+							<tr>
+								<th colspan = "6"><b>
+								<br/>[Distributions]</b></th>
+							</tr>
+
+							<!-- 7 -->
+							<tr class="overviewRow">
+								<td>Apr 11</td>
+								<td>
+									Variance, Bernoulli and Binomial
+								</td>
+								<td>
+
+									<a href="..//pdfs/11 Variance.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/tgTj6fwbmj8"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/7-Variance.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 4.5-4.6</td>
+								<td></td>
+							</tr>
+
+							
+
+							<!-- 8 -->
+							<tr class="overviewRow">
+								<td>Apr 13</td>
+								<td>
+									Discrete Distributions
+								</td>
+								<td>
+
+									<a href="..//pdfs/12 Poisson.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/3s7LVkkpRko"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									
+
+									<a href="..//ppt/8-MoreDiscreteDist.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../code/weather.zip"><span class="glyphicon glyphicon-grain" title="code" aria-hidden="true"></span></a>
+
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 4.7-4.10</td>
+								<td></td>
+							</tr>
+
+							<!-- 9 -->
+							<tr class="overviewRow">
+								<td>Apr 15</td>
+								<td>
+									Continuous Random Variables
+								</td>
+								<td>
+
+									<a href="..//pdfs/13 Continuous.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/W57yYpyL5do"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/9-ContinuousDist.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../demos/jurors.html"><span class="glyphicon glyphicon-leaf" title="code" aria-hidden="true"></span></a>
+
+									
+
+									<!--<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="overviewIcon glyphicon glyphicon-blackboard" title="pptx" aria-hidden="true"></span></a>
+									<span class="overviewIcon glyphicon glyphicon-pencil" aria-hidden="true" title="code"></span>
+									<a href="..//lectures/0-Welcome/0-Welcome.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>-->
+								</td>
+								<td>Chapter 5.1-5.3</td>
+								<td></td>
+							</tr>
+
+							<!-- 10 -->
+							<tr class="overviewRow">
+								<td>Apr 18</td>
+								<td>
+									Normal Distributions
+								</td>
+								<td>
+									<a href="..//pdfs/16 Gaussian.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=a-8cX3BnVmU"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/10-Normal.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../demos/cdf.html"><span class="glyphicon glyphicon-leaf" title="code" aria-hidden="true"></span></a>
+								</td>
+								<td>Chapter 5.4-5.6</td>
+								<td>Due PSet #2</td>
+							</tr>
+
+							<!-- 11 -->
+							<tr class="overviewRow">
+								<td>Apr 20</td>
+								<td>
+									Joint Distribution Functions
+								</td>
+								<td>
+									<a href="..//pdfs/18 Joint.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/YPfNOy0kOs4"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/11-Joint.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../demos/imageDist.html"><span class="glyphicon glyphicon-leaf" title="code" aria-hidden="true"></span></a>
+								</td>
+								<td>Chapter 6.1</td>
+								<td></td>
+							</tr>
+
+							<!-- 12 -->
+							<tr class="overviewRow">
+								<td>Apr 22</td>
+								<td>
+									Independent Random Variables
+								</td>
+								<td>
+									
+									<a href="..//pdfs/19 MoreJointProperties.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/PcPsYH9w9HM"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/12-IndependentRVs.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+									
+								</td>
+								<td>Chapter 6.2-6.3</td>
+								<td></td>
+							</tr>
+
+							<!-- 13 -->
+							<tr class="overviewRow">
+								<td>Apr 25</td>
+								<td>
+									Conditional Distributions
+								</td>
+								<td>
+									
+									<a href="..//pdfs/20 ConvolutionAndConditional.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/ZseuyMXMjhg"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/13-ConvAndCondRVs.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									
+								</td>
+								<td>Chapter 6.4-6.5</td>
+								<td></td>
+							</tr>
+
+							<!-- 14 -->
+							<tr class="overviewRow">
+								<td>Apr 27</td>
+								<td>
+									Beta Distributions
+								</td>
+								<td>
+									
+									<a href="..//pdfs/22 Beta.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/qTCtQcTO150"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/14-BetaDistribution.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../demos/beta.html"><span class="glyphicon glyphicon-leaf" title="code" aria-hidden="true"></span></a>
+									
+								</td>
+								<td>Chapter 7.1-7.2</td>
+								<td>Due: PSet #3</td>
+							</tr>
+
+							<tr>
+								<th colspan = "6"><b>
+								<br/>[Advanced Probability]</b></th>
+							</tr>
+
+							
+							
+
+							<!-- 15 -->
+							<tr class="overviewRow">
+								<td>Apr 29</td>
+								<td>
+									Variance From Events
+								</td>
+								<td>
+									
+									<a href="..//pdfs/27 VarianceFromEvents.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://youtu.be/_pGPh4FMXIU"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/15-VarianceFromPrinciples.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									
+								</td>
+								<td>Chapter 7.3-7.4</td>
+								<td></td>
+							</tr>
+
+							<!-- 16 -->
+							<tr class="overviewRow">
+								<td>May 2</td>
+								<td>
+									Covariance and Samples
+								</td>
+								<td>
+									
+									<a href="..//pdfs/28 CovarianceAndSamples.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=5goOKoWQUb4"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/16-Covariance.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+								</td>
+								<td>Chapter 7.5-7.6</td>
+								<td></td>
+							</tr>
+
+							<!-- 17 -->
+							<tr class="overviewRow">
+								<td>May 4</td>
+								<td>
+									Correlation
+								</td>
+								<td>
+									
+									<a href="..//pdfs/29 Correlation.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=G5ldUkPs9hk"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/17-Correlation.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+									
+								</td>
+								<td>Chapter 7.7</td>
+								<td></td>
+							</tr>
+
+							<!-- 18 -->
+							<tr class="overviewRow">
+								<td>May 6</td>
+								<td>
+									Conditional Expectation
+								</td>
+								<td>
+								
+									<a href="..//pdfs/30 CondExpectation.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=Ab6VFuiIV1Q"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/18-ConditionalExpectation.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+								</td>
+								<td>Chapter 8.1-8.2, 8.5</td>
+								<td></td>
+							</tr>
+
+							<!-- 19 -->
+							<tr class="overviewRow">
+								<td>May 9</td>
+								<td>
+									Central Theorems
+								</td>
+								<td>
+									<a href="..//pdfs/31 CentralTheorems.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=-MEosok_is4"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/19-CLT.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="http://onlinestatbook.com/stat_sim/sampling_dist/
+"><span class="glyphicon glyphicon-leaf" title="demo" aria-hidden="true"></span></a>
+									
+								</td>
+								<td>Chapter 8.3-8.4</td>
+								<td>Due PSet #4</td>
+							</tr>
+
+							<tr>
+								<th colspan = "6"><b>
+								<br/>[Machine Learning]</b></th>
+							</tr>
+
+							<!-- 20 -->
+							<tr class="overviewRow">
+								<td>May 11</td>
+								<td>
+									Parameters and Learning
+								</td>
+								<td>
+									<a href="..//pdfs/34 ParameterEstimation.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=4dEmOnCwKu0"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/20-Parameters.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+									
+								</td>
+								<td>Lecture Handout</td>
+								<td></td>
+							</tr>
+
+							<!-- 21 -->
+							<tr class="overviewRow">
+								<td>May 13</td>
+								<td>
+									Maximizing Likelihood
+								</td>
+								<td>
+									<a href="..//pdfs/35 MaximumLikelihood.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=0UyYKt4Aoxw"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/21-Likelihood.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="../demos/likelihood/"><span class="glyphicon glyphicon-leaf" title="code" aria-hidden="true"></span></a>
+								</td>
+								<td>Lecture Handout</td>
+								<td></td>
+							</tr>
+
+							<!-- 22 -->
+							<tr class="overviewRow">
+								<td>May 16</td>
+								<td>
+									Maximum A Posteriori
+								</td>
+								<td>
+									<a href="..//pdfs/37 MaximumAPosteriori.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href ="https://www.youtube.com/watch?v=8MPdhbtoJq0"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/22-MAP.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+								</td>
+								<td>Lecture Handout</td>
+								<td></td>
+							</tr>
+
+							<!-- 23 -->
+							<tr class="overviewRow">
+								<td>May 18</td>
+								<td>
+									Naive Bayes
+								</td>
+								<td>
+									<a href="..//pdfs/39 NaiveBayes.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=OVLjQEeGNfE"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/23-NaiveBayes.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+								</td>
+								<td>Lecture Handout</td>
+								<td>Due PSet #5</td>
+							</tr>
+
+							<!-- 24 -->
+							<tr class="overviewRow">
+								<td>May 20</td>
+								<td>
+									Logistic Regression
+								</td>
+								<td>
+									
+									<a href="..//pdfs/40 LogisticRegression.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=8Qz2qepVUPA"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/24-LogisticRegression.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+								</td>
+								<td>Lecture Handout</td>
+								<td></td>
+							</tr>
+
+							<!-- 25 -->
+							<tr class="overviewRow">
+								<td>May 23</td>
+								<td>
+									Deep Learning
+								</td>
+								<td>
+									<a href="..//pdfs/41 DeepLearning.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="https://www.youtube.com/watch?v=0VcSreUd01c"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/25-DeepLearning.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="http://scs.ryerson.ca/~aharley/vis/conv/
+"><span class="glyphicon glyphicon-leaf" title="demo" aria-hidden="true"></span></a>
+								</td>
+								<td>Lecture Handout</td>
+								<td></td>
+							</tr>
+
+							<!-- 26 -->
+							<tr class="overviewRow">
+								<td>May 25</td>
+								<td>
+									Applied Machine Learning
+								</td>
+								<td>
+
+									<a href="https://www.youtube.com/watch?v=fFOGNrs_id0"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+
+									<a href="..//ppt/26-AppliedMachineLearning.pdf"><span class="glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span></a>
+
+									<a href="http://cs.stanford.edu/people/karpathy/convnetjs/"><span class="glyphicon glyphicon-leaf" title="demo" aria-hidden="true"></span></a>
+								</td>
+								<td>None</td>
+								<td></td>
+							</tr>
+							
+							<!-- 27 -->
+							<tr class="overviewRow">
+								<td>May 27</td>
+								<td>
+									CS109 Overview
+								</td>
+								<td>
+
+									<a href="https://www.youtube.com/watch?v=lvWW-zmm6Qk"><span class="glyphicon glyphicon-facetime-video" title="video" aria-hidden="true"></span></a>
+								</td>
+								<td>None</td>
+								<td></td>
+							</tr>
+
+							<tr class="overviewRow">
+								<td>May 30</td>
+								<td>
+									Memorial Day (no class)
+								</td>
+								<td>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="overviewRow">
+								<td>Jun 1</td>
+								<td>
+									Dead Day (no class)
+								</td>
+								<td>
+									
+								</td>
+								<td></td>
+								<td>Due PSet #6</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+				</p>
+				<!--<hr/>-->
+			</div>
+		</div>
+
+		<!--<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					Discussion Sections
+				</h2>
+				<p>
+					In addition to lecture, you must sign up for a weekly 50-minute section. In order to take
+CS 106B, you must sign up for a section between 5:00P.M., Thursday, January 7, and the
+close of enrollments at 5:00P.M. on Sunday, January 10. Please use the signup form at
+<a href="http://cs198.stanford.edu/section/">http://cs198.stanford.edu/section/</a>. Important note: Do not use Axess to sign
+up for sections; section enrollments made through Axess are simply ignored.
+				</p>
+				<hr/>
+			</div>
+		</div>-->
+
+		<!--<div class="row" id="grades">
+			<div class="col-sm-12">
+				<h2>
+					Grades
+				</h2>
+				<p>
+					Your final grade in this course will be calculated using the following weights:
+				</p>
+				<div class="well" style="width:280px">
+					<h4>Weights</h4>
+					<table class="table table-condensed" style="margin-bottom:0px;">
+						<tbody>
+							<tr>
+								<td style="width: 180px">Section Participation</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td style="width: 120px">Programs</td>
+								<td>50%</td>
+							</tr>
+							<tr>
+								<td style="width: 120px">Midterm</td>
+								<td>15%</td>
+							</tr>
+							<tr>
+								<td style="width: 120px">Final</td>
+								<td>25%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					
+					Each of the exams is scaled to take account of the difficulty of the exam, which is nearly
+impossible to assess in advance. The other components and the final grade are not
+curved. If everyone does brilliantly in this class, everyone gets an A.
+				</p>
+				<hr/>
+			</div>
+		</div>-->
+
+		
+
+		<!--<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					Programming Assignments
+				</h2>
+				<p>
+					CS 106B requires seven programming assignments, which are due on the dates given in
+the syllabus. Except for Assignment #7 (which is due at the very end of the quarter),
+your section leader will grade each of your assignments and then discuss how well you
+have done (and how you can improve on future assignments) in an interactive,
+one-on-one session. Assignments are graded separately for functionality and style.
+				</p>
+				<hr/>
+			</div>
+		</div>
+			
+		<div class="row">
+			<div class="col-sm-8">
+			<h2>
+				Late Policy
+			</h2>
+		</div>
+			<div class="col-sm-9">
+				
+
+				<div class="subsection">
+					
+					<p>
+						Each of the assignments is due at 5:00P.M. on the day specified in the syllabus.
+Assignments are submitted electronically using the procedure described in the first
+assignment. Important note: all assignments are due at 5:00P.M. sharp on the dates
+indicated on the assignment handout. Assignments submitted after 5:00 will be
+considered late.
+					</p>
+					<p>
+						Because each of you will probably come upon some time during the quarter where so
+much work piles up that you need a little extra time, every student begins the quarter with
+three free “late days.” To avoid any ambiguity, a “day” is defined as a class day. Thus, if
+your assignment was due on Friday but turned in the following Monday, that assignment
+would be one day late. Note: You cannot use late days on Assignment #7, which is due at the end of the quarter. After your late days for the quarter are exhausted, programs are assessed a late
+penalty of one category point per late day used (a ✓+ turns into a ✓, and so forth). Late
+days are valuable, and it pays to keep some around for the harder assignments toward the
+end of the quarter. In all cases, assignments must be turned in within a calendar week of
+their published due date.
+					</p>
+
+					<p>
+						In special circumstances (such as extended medical problems or other emergencies),
+extensions may be granted beyond the late days. To request an extension, send e-mail to
+the TA (Megan Faulk <mfaulk@stanford.edu>) no later than 24 hours before the
+program is due. Only the TA is authorized to approve such extensions. In particular, do
+not ask your section leader.
+					</p>
+				</div>
+
+				
+
+				
+
+			</div>
+			<div class="col-sm-3">
+				
+				<div class="faq well">
+					<h4 class="subheading">How Many Late Days?</h4>
+					<p>
+						Three late days. A “day” is defined as a class day.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>-->
+
+
+	
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<hr>
+
+		<div class="footer">
+			<p class="pull-left">
+				&#169; Stanford 2016 &#124; Created by 
+				<a href="http://stanford.edu/~cpiech">Chris</a>.
+				CS109 has been developed by many talented teachers. Special thanks to Mehran Sahami.
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+	</div>
+
+	<script type="text/javascript">
+		$( ".moment" ).each(function( i ) {
+			var date = $(this).html()
+
+			var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+			$(this).html(fromStr)
+		  });
+		//alert(moment("20160101", "YYYYMMDD").fromNow())
+	</script>
+
+</body>

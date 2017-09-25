@@ -1,0 +1,440 @@
+<html>
+
+<head>
+<meta name="generator" content="Namo WebEditor v5.0">
+<base target="_top">
+<meta name="author" content="AI ACCESS">
+
+<meta name="description" content="Training course in statistics and data modeling">
+
+<link rel="stylesheet" href="../../../Styles/style_glossaire.css">
+
+
+<title>Likelihood and method of Maximum Likelihood</title>
+<meta name="keywords" content="likelihood, maximum likelihood, estimation, estimator, statistics, simulation">
+<script language="JavaScript">
+<!--
+function na_preload_img()
+{ 
+  var img_list = na_preload_img.arguments;
+  if (document.preloadlist == null) 
+    document.preloadlist = new Array();
+  var top = document.preloadlist.length;
+  for (var i=0; i < img_list.length; i++) {
+    document.preloadlist[top+i] = new Image;
+    document.preloadlist[top+i].src = img_list[i+1];
+  } 
+}
+
+function na_change_img_src(name, nsdoc, rpath, preload)
+{ 
+  var img = eval((navigator.appName.indexOf('Netscape', 0) != -1) ? nsdoc+'.'+name : 'document.all.'+name);
+  if (name == '')
+    return;
+  if (img) {
+    img.altsrc = img.src;
+    img.src    = rpath;
+  } 
+}
+
+function na_restore_img_src(name, nsdoc)
+{
+  var img = eval((navigator.appName.indexOf('Netscape', 0) != -1) ? nsdoc+'.'+name : 'document.all.'+name);
+  if (name == '')
+    return;
+  if (img && img.altsrc) {
+    img.src    = img.altsrc;
+    img.altsrc = null;
+  } 
+}
+
+// -->
+</script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red" onload="na_preload_img(false, '../../cliparts/bt_home_2.gif', '../../cliparts/bt_index_2.gif', '../../cliparts/bt_tutorials_2.gif', '../../cliparts/bt_training_2.gif', '../../cliparts/bt_contact_2.gif', 'images/Likelihood2.gif', '../../cliparts/bt_index2.gif');">
+
+<div id="layer1" style="background-image:url('../../cliparts/banner.gif'); width:1007px; height:61px; position:absolute; left:0px; top:0px; z-index:1;">
+    <p>&nbsp;</p>
+</div>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<table align="center" border="0" height="35">
+     <tr>
+        <td width="120" height="35" align="center">
+            <p><a href="../../home.htm" target="_top" OnMouseOut="na_restore_img_src('bouton_home', 'document')" OnMouseOver="na_change_img_src('bouton_home', 'document', '../../cliparts/bt_home_2.gif', true);"><img src="../../cliparts/bt_home_1.gif" width="100" height="22" border="0" name="bouton_home"></a></p>
+        </td>
+        <td width="120" height="35" align="center">
+            <p><a href="../../../e_gm.htm" OnMouseOut="na_restore_img_src('image4', 'document')" OnMouseOver="na_change_img_src('image4', 'document', '../../cliparts/bt_index_2.gif', true);" target="_top"><img src="../../cliparts/bt_index_1.gif" width="100" height="22" border="0" name="image4"></a></p>
+        </td>
+        <td width="120" height="35" align="center">
+            <p><a href="../../../x_tutor_list.htm" OnMouseOut="na_restore_img_src('tutorial2', 'document')" OnMouseOver="na_change_img_src('tutorial2', 'document', '../../cliparts/bt_tutorials_2.gif', true);" target="_top"><img src="../../cliparts/bt_tutorials_1.gif" width="100" height="22" border="0" name="tutorial2"></a></p>
+        </td>
+        <td width="120" height="35" align="center">
+            <p><a href="../../../e_train.htm" target="_top" OnMouseOut="na_restore_img_src('bouton_formations', 'document')" OnMouseOver="na_change_img_src('bouton_formations', 'document', '../../cliparts/bt_training_2.gif', true);"><img src="../../cliparts/bt_training_1.gif" width="100" height="22" border="0" name="bouton_formations"></a></p>
+        </td>
+        <td width="120" height="35" align="center">
+            <p><a href="mailto:aiaccess@aol.com" OnMouseOut="na_restore_img_src('image3', 'document')" OnMouseOver="na_change_img_src('image3', 'document', '../../cliparts/bt_contact_2.gif', true);"><img src="../../cliparts/bt_contact_1.gif" width="100" height="22" border="0" name="image3"></a></p>
+        </td>
+    </tr>
+</table>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="EntréeGlossaire">&nbsp;</p>
+
+<table align="right" border="0" width="194" height="40" style="border-width:1px; border-color:blue; border-style:solid;" bgcolor="#FFFFCC">
+    <tr>
+        <td width="148" height="26">
+            <p align="right"><font face="Verdana" size="2">Interactive animation</font></p>
+        </td>
+        <td width="36" height="26">
+            <p align="center"><a href="#likelihood_swf" target="_self"><img src="../../cliparts/bt_anired10_down.gif" width="20" height="20" border="0"></a></p>
+        </td>
+    </tr>
+</table>
+<p class="EntréeGlossaire"><a href="e_gm_leverage.htm" title="Leverage"><img src="../../cliparts/bt_whitewave_back.gif" width="27" height="27" border="0"></a></p>
+<p class="EntréeGlossaire"><a name="Likelihood">Likelihood</a></p>
+<p class="TexteGlossaire">A measure of how likely it is that a given &quot;candidate&quot; 
+probability distribution generated a given sample.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">Let :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* <i>S</i> be a set of <i>n</i>&nbsp;numerical 
+observations {<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>,..., <i>x</i><sub><i>n</i></sub>}&nbsp;(the 
+sample).</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;<i>X</i> be a numerical random 
+variable with probability density function (p.d.f.) &nbsp;<i>p</i>(<i>x</i>).</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">The <b>likelihood</b> of &nbsp;<i>p</i>(<i>x</i>)&nbsp;&nbsp;(with 
+respect to <i>S</i>) is a&nbsp; measure of how &quot;likely&quot; it is that the 
+data set 
+<i>S</i> was  generated as the outcome of <i>n</i> independent draws of <i>X</i>.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">In the top illustration, it is very unlikely (although 
+not strictly impossible) that the sample was generated by the normal 
+distribution D<sub>1</sub>(<i>x</i>), because all data points sit in regions where the probability 
+density is 
+very low.</p>
+<p class="TexteGlossaire">On the other hand, the bottom illustration depicts 
+a situation where it is much more likey that the data set was generated by the 
+distribution D<sub>2</sub>(<i>x</i>).<br>&nbsp;</p>
+<table align="center" border="0" width="450" height="270" class="PetitCentre">
+    <tr>
+        <td>
+            <p align="center"><a OnMouseOut="na_restore_img_src('image8', 'document')" OnMouseOver="na_change_img_src('image8', 'document', 'images/Likelihood2.gif', true);"><img src="images/Likelihood1.gif" width="400" height="243" border="0" name="image8"></a></p>
+        </td>
+    </tr>
+</table>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire"><br>The mathematical expression of the <b>likelihood</b> 
+<i>L</i> is just the product of the values of&nbsp;the probability density function 
+(p.d.f.) taken at all data 
+points :</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<table align="center" border="1" cellspacing="0" width="149" height="50" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td width="143"><p class="PetitCentre"><i>L</i>(<i><sub> 
+</sub>p</i>(<i>x</i>)) = <img src="../../../Symboles_Maths/pi_maj.gif" width="16" height="19" border="0"><i><sub>i 
+</sub>p</i>(<i>x<sub>i</sub></i>)</p>
+        </td>
+    </tr>
+</table>
+<p class="TexteGlossaire"><br></p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">Clearly, <i>L </i>will take substantial values if 
+and only if the p.d.f. of <i>X</i> takes substantial values for <b>all</b> data points. 
+Therefore <i>L</i> appears as&nbsp;a somewhat arbitrary, but&nbsp;reasonable 
+choice for measuring the match between a p.d.f. and a sample.<br>In fact, 
+the <a href="#asympt_efficient" target="_top"><font color="blue">properties</font></a> 
+of the likelihood make it the most important estimator of the match between 
+a probability distribution and a sample.<br>_______________________________________<br><br>The 
+likelihood can also be interpreted as follows. Let <i>X</i><sub>1</sub>, <i>X</i><sub>2</sub> 
+, ..., <i>X</i><sub><i>n</i></sub>&nbsp;&nbsp;be <i>n</i> independent variables, all 
+with the same p.d.f. &nbsp;<i>p</i>(<i>x</i>) .&nbsp;&nbsp;Then the likelihood 
+of <i>p</i>(<i>x</i>) 
+is the <b>joint p.d.f.</b> of the set of&nbsp;variables (<i>X</i><sub>1</sub>, 
+<i>X</i><sub>2</sub> , ..., <i>X</i><sub><i>n</i></sub>).<br>Equivalently,&nbsp;the sample 
+<i>S</i> may be&nbsp;represented as a point <b>x</b>&nbsp;= {<i>x</i><sub>1</sub>, 
+<i>x</i><sub>2</sub>,..., <i>x</i><sub><i>n</i></sub>}&nbsp;in a <i>n</i>-dimensional 
+space. The likelihood of <i>p</i>(<i>x</i>) is then the&nbsp;p.d.f. of <i>S</i> considered as a <i>n</i>-dimensional 
+random variable.<br>_______________________________________<br><br>The 
+concept of &nbsp;likelihood generalizes to the case where the variable <i>X</i> is&nbsp;categorical 
+(or &quot;nominal&quot;) rather than numerical. Let M<sub>1</sub>, M<sub>2</sub>&nbsp;, 
+..., M<sub><i>k</i></sub> &nbsp;be&nbsp;the modalities of the variable, and 
+<i>n</i><sub>1</sub>, <i>n</i><sub>2</sub>&nbsp;, ..., <i>n</i><sub><i>k</i></sub>&nbsp;&nbsp;&nbsp;(<img src="../../../Symboles_Maths/c_sigma_maj.gif" width="18" height="20" border="0"><i><sub>i</sub>n</i><sub><i>i</i></sub> 
+= <i>n</i>) &nbsp;be the observed frequencies of the modalities in the sample. 
+The probability distribution of <i>X</i> is defined by the value&nbsp;<i>p<sub>i</sub></i> 
+of the modality M<sub><i>i</i></sub> for each <i>i</i> :</p>
+<p class="PetitCentre"><i>p<sub>i</sub></i> = Probability of M<sub><i>i</i></sub></p>
+<p class="TexteGlossaire">Then the likelihood of this set of probabilities is 
+defined as :</p>
+<p class="TexteGlossaire"><br></p>
+<table align="center" border="1" cellspacing="0" width="201" height="50" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td width="195">
+            <p class="TexteGlossaire" align="center"><i>L</i>(<i>p</i><sub>1</sub>, 
+            .., <i>p<sub>n</sub></i>) =  <img src="../../../Symboles_Maths/pi_maj.gif" width="16" height="19" border="0"><i><sub>i </sub></i>(<i><sub>
+</sub>p<sub>i</sub></i>)<i><sup>ni</sup></i></p>
+        </td>
+    </tr>
+</table>
+<p class="TexteGlossaire"><br>_______________________________________<br><br>In 
+<a name="log-likelihood">many</a> circumstances, it will be computationally&nbsp;more convenient to use the 
+opposite of the&nbsp;logarithm 
+of the likelihood, -log(<i>L</i>), rather than the likelihood itself. This quantity 
+is called the <b>log-likelihood</b>. For example, in the case of a 
+continuous numerical 
+variable :</p>
+<p class="PetitCentre">log-likelihood = -log(<i>L</i>) = -log(<img src="../../../Symboles_Maths/pi_maj.gif" width="16" height="19" border="0"><i><sub>i 
+</sub>p</i>(<i>x<sub>i</sub></i>)) = -<img src="../../../Symboles_Maths/c_sigma_maj.gif" width="18" height="20" border="0"><i><sub>i</sub></i>log(<i>p</i>(<i>x<sub>i</sub></i>))&nbsp;</p>
+<p class="Note">Why the &quot;-&quot; sign ?</p>
+<p class="TexteGlossaire">For an example of the use of the log-likelihood, see 
+&quot;<a href="e_gm_kullbak.htm" target="_top">Kullback-Leibler distance</a>&quot;.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="EntréeGlossaire"><a name="maximum-likelihood">Likelihood</a> &nbsp;<font color="black" size="2">(Method 
+of maximum)</font><br></p>
+<p class="TexteGlossaire">The concept of &nbsp; <a href="#Likelihood" target="_self"><font color="blue">likelihood</font></a> 
+plays a central role is estimating the parameters of a model (either <a href="e_gm_predictive.htm" target="_top">predictive</a> 
+or <a href="e_gm_descriptive.htm" target="_top">descriptive</a>). <br><br>For example, let <i>S</i> be a 
+data set, and suppose we know with certainty that <i>S</i> was generated by a normal 
+distribution <b>N</b>(<i>m</i>, <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0">²). 
+Suppose further that neither the mean <i>m</i>, nor the variance <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0">²&nbsp;of 
+this normal distribution are known. How can the values of these two parameters 
+be estimated ? Although several approaches can be envisioned,&nbsp;the 
+most important one is to decide in favor of&nbsp;those values for <i>m</i>&nbsp;and 
+<img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0">²&nbsp;that 
+will make the likelihood of <b>N</b>(<i>m</i>, <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0">²)&nbsp;<b>largest</b> 
+(hence the name &quot;Method of Maximum Likelihood&quot;).</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">We therefore consider now the likelihood <i>L</i> 
+as a function of <i>m</i> and <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0">, 
+and set out to find the largest value of <i>L</i> when <i>m</i> and <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0"> 
+vary. For this purpose, we should  set the partial derivatives of <i>L</i> 
+with respect to&nbsp;<i>m</i> and <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0"> 
+ to &quot;0&quot; . In this particular case, it is more convenient&nbsp;to work 
+with the <a href="#log-likelihood" target="_self"><font color="blue">log-likelihood</font></a>, which reaches its largest 
+value for the same values of &nbsp;<i>m</i> and <img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0"> 
+as the likelihood does, because &quot;log&quot; is a monotonically increasing 
+function. So we set :</p>
+<p class="PetitCentre"><img src="../../../Symboles_Maths/d_rond.gif" width="8" height="16" border="0">log(<i>L</i>)/<img src="../../../Symboles_Maths/d_rond.gif" width="8" height="16" border="0"><i>m</i> 
+= 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../../Symboles_Maths/d_rond.gif" width="8" height="16" border="0">log(<i>L</i>)/<img src="../../../Symboles_Maths/d_rond.gif" width="8" height="16" border="0"><img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0"> 
+= 0</p>
+<p class="Note">1)These equations only determine the position of an extremum of 
+the likelihood. It is of course appropriate to check that this extremum is indeed 
+a 
+maximum, and not a minimum. This is done by checking that the second derivatives 
+of the likelihood take negative&nbsp;values at the (single) extremum.<br><br>2) 
+The &quot;derivation&quot; approach is not always applicable, as <i>L</i> is 
+not always a differentiable function of the parameters. Can you identify a very 
+simple probability density function for which the likelhood is <b>not</b> differentiable 
+with respect to its parameters&nbsp;?</p>
+<p class="TexteGlossaire">The actual calculation, though straightforward, 
+is a bit tedious. The very simple (and intuitive)&nbsp;result is :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;<i>m</i><sub><font size="2">Max</font></sub> 
+= <img src="../../../Symboles_Maths/x_average.gif" width="9" height="16" border="0"></p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* &nbsp;<img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0"><sub><font size="2">Max</font></sub> 
+= <i>s</i></p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">where <img src="../../../Symboles_Maths/x_average.gif" width="9" height="16" border="0">&nbsp;is 
+the sample average, and <i>s</i> is the sample standard deviation.</p>
+<p class="TexteGlossaire">So, when the candidate distribution is normal, the 
+Maximum Likelihood method of parameter estimation leads to the following conclusion :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Estimate the mean <i>m</i> by the 
+sample average.</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Estimate the standard deviation 
+by the sample standard deviation.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="Note">Warning :&nbsp;this&nbsp;result&nbsp;is <b>not</b> valid for 
+<b>all</b> types of candidate distributions.<br></p>
+<p class="TexteGlossaire">This simple example generalizes (under very general 
+conditions) to the case of an 
+arbitrary candidate distribution that is known up to one (or several) parameter(s) 
+<img src="../../../Symboles_Maths/theta.gif" width="8" height="14" border="0"> 
+:</p>
+<p class="PetitCentre"><i>p</i>(<i>x</i>, <img src="../../../Symboles_Maths/theta.gif" width="8" height="14" border="0">)</p>
+<p class="TexteGlossaire">The Maximum Likelihood estimation of <img src="../../../Symboles_Maths/theta.gif" width="8" height="14" border="0"> 
+is obtained by solving the equation(s) :</p>
+<p class="PetitCentre"><img src="../../../Symboles_Maths/d_rond.gif" width="8" height="16" border="0"><i>L</i>(<b>x</b>, 
+<img src="../../../Symboles_Maths/theta.gif" width="8" height="14" border="0">)<i>&nbsp;</i>/ 
+<img src="../../../Symboles_Maths/d_rond.gif" width="8" height="16" border="0"><img src="../../../Symboles_Maths/theta.gif" width="8" height="14" border="0"> 
+= 0</p>
+<p class="TexteGlossaire">The solution may not be unique (it is in the case 
+of a normal candidate distribution). It is also necessary to check that 
+the solution corresponds to a maximum of <i>L</i>, and not to a minimum.</p>
+<p class="TexteGlossaire">________________________________________</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">In <a href="e_gm_regression_linear_simple.htm" target="_top">Simple 
+Linear Regression</a>, parameters are usually 
+estimated by the <a href="e_gm_Le.htm#least_squares_line" target="_top">Least Squares</a> approach, but it can be shown that 
+(under the standard assumptions of SLR)&nbsp; the results 
+thus obtained are the same as&nbsp;those obtained by the Maximum Likelihood 
+method.<br>&nbsp;</p>
+<p class="TexteGlossaire">But it is not so in&nbsp;<a href="../../../e_log_reg.htm" target="_top">Logistic 
+Regression</a> : the&nbsp;parameters of the model are estimated by&nbsp;Maximum 
+Likelihood, and the model does <b>not</b> minimize the sum of the squares of 
+the residuals (as it does in SLR).<br>&nbsp;</p>
+<p class="TexteGlossaire">In <a href="e_gm_Mu_N.htm#Neural" target="_top">Neural Networks</a>, parameters are estimated by the 
+Least Squares approach when used as regressors. But when used as classifier, 
+the proper parameter estimation method should be (and sometimes is!) the Maximum 
+Likelihood. This amount to minimizing an error function that is <b>not</b> 
+the sum of squares of the residuals.</p>
+<p class="TexteGlossaire">________________________________________</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire"><a name="asympt_efficient">The</a> central&nbsp;property of the Maximum Likelihood 
+method of parameter estimation is as follows :</p>
+<p class="PetitCentre">Under very general conditions, a&nbsp;parameter&nbsp;estimator 
+generated by Maximum Likelihood is asymptotically efficient.</p>
+<p class="TexteGlossaire">In simple terms, this means that as <i>n</i>, the 
+number of observations in the sample, grows without limit, a Maximum Likelihood 
+estimator ultimately&nbsp;becomes &quot;better&quot; (in a precise technical 
+sense) that any other estimator.</p>
+<p class="TexteGlossaire">For small samples, some estimators may turn out to 
+be better than Maximum Likelihood estimators.</p>
+<p class="PetitCentre"><b>_________________________________________________________________</b></p>
+<p class="TexteGlossaire"><a name="likelihood_swf"></a></p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">The following animation illustrates the concept of likelihood, 
+and the Method of Maximum Likelihood.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<table align="center" border="0" cellspacing="0" width="710" height="320" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td>
+            <p align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0" width="700" height="310">
+            <param name="movie" value="../../../Flash/e_likelihood_1.swf">
+            <param name="play" value="true">
+            <param name="loop" value="true">
+            <param name="quality" value="high">
+            <embed src="../../../Flash/e_likelihood_1.swf" play="true" loop="true" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="700" height="310"></embed>
+            </object></p>
+        </td>
+    </tr>
+</table>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">The likelihood is the product of the heights of all 
+the green&nbsp;connections from the sample&nbsp;points to the gaussian curve.</p>
+<p class="TexteGlossaire">The posted value is the ratio of the current likelihood 
+to the largest possible likelihood.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">&nbsp;To fit &nbsp;the candidate normal distribution 
+to the sample :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Translate it by translating 
+the top of the curve with your mouse,</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Change its width (standard 
+deviation) by translating either side of the curve with your mouse.</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">Fine-tune the position and width of the curve by clicking 
+and keeping&nbsp;your mouse button down :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Above the top of the curve 
+to make it taller (and therefore narrower),</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* In the area below the curve 
+to make it shorter (and therefore wider),</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* On either side of the curve 
+to translate it.<br>____________________________</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire">A little teaser to conclude. We found the values of 
+the parameters of the normal distribution that lead to the largest possible 
+value of the&nbsp;likelihood. Now, what about this value ?</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Without any calculation, 
+convince yourself that the largest value of the likelihood&nbsp;does not change 
+if the sample is translated by an arbitrary quantity.</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Without any calculation, 
+find out how this largest value changes when the <i>x</i>-scale is changed. 
+For example, if every&nbsp;x<i><sub>i</sub></i> is changed into 2.x<i><sub>i</sub></i>, 
+how does the maximum value of the likelihood change ?</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Recall that the probability 
+density function of a normal distribution is :</p>
+<p class="PetitCentre"><i>p</i>(<i>x</i>) = (1/<img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0">.(2<img src="../../../Symboles_Maths/pi.gif" width="14" height="18" border="0">)<sup><font size="2">1/2</font></sup>).&nbsp;exp(-(<i>x</i> 
+- <i>m</i>)<sup><font size="2">2</font></sup>/2<img src="../../../Symboles_Maths/sigma.gif" width="9" height="10" border="0"><sup><font size="2">2</font></sup>)</p>
+<p class="TexteGlossaire">With a very simple calculation, find the largest 
+value of the likelihood for any sample (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>&nbsp;, 
+..., <i>x</i><sub><i>n</i></sub>&nbsp;). Conclude that if the sample has unit 
+standard deviation, then the largest value of the likelihood depends <b>only</b> 
+on the number of points <i>n</i>, and not on the actual positions&nbsp;of the&nbsp;points. 
+Because of the previous remark, conclude that, in the&nbsp;general case, the largest value of the likelihood 
+depends <b>only</b> on the standard deviation of the sample and the number of 
+observations.<br>&nbsp;</p>
+<p class="Note">Warning : this result is <b>not</b> valid for <b>all</b> types 
+of candidate distributions.&nbsp;</p>
+<p class="TexteGlossaire">____________________________________________</p>
+<p class="TexteGlossaire">&nbsp;</p>
+<p class="TexteGlossaire"><b>Related readings :</b></p>
+<div align="left">
+    <table border="0" width="331">
+        <tr>
+            <td width="314" height="38" align="center"><table border="1" cellspacing="0" width="262" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td width="217" height="30">
+            <p class="TexteGlossaire">Estimation</p>
+        </td>
+        <td width="35" height="30">
+
+            <p align="center"><a href="e_gm_estimation.htm"><img src="../../cliparts/bt_anired10_next.gif" width="20" height="20" border="0"></a></p>
+        </td>
+    </tr>
+                    <tr>
+        <td width="217" height="30">
+                            <p class="TexteGlossaire">Neyman-Pearson lemma</p>
+        </td>
+        <td width="35" height="30">
+
+            <p align="center"><a href="e_gm_neyman_pearson.htm"><img src="../../cliparts/bt_anired10_next.gif" width="20" height="20" border="0"></a></p>
+        </td>
+                    </tr>
+</table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div align="right">
+    <table border="0" width="27" height="27">
+        <tr>
+            <td>
+                <p align="center"><a href="e_gm_lin.htm" title="Linearity"><img src="../../cliparts/bt_whitewave_next.gif" width="27" height="27" border="0"></a></p>
+            </td>
+        </tr>
+    </table>
+<table border="0" width="199">
+        <tr>
+            <td width="160" height="31">
+                <p align="right"><font face="Verdana"><b><span style="font-size:8pt;">Download this Glossary</span></b></font></p>
+            </td>
+            <td width="29" height="31">
+
+                <p align="center"><a href="../Shop/bookstore.htm" target="_top"><img src="../../cliparts/bt_anired10_next.gif" width="20" height="20" border="0"></a></p>
+            </td>
+        </tr>
+    </table>
+    
+    <table border="0" cellspacing="0" width="144" bordercolordark="white" bordercolorlight="black">
+        <tr>
+            <td width="142" height="32" align="center" valign="middle">
+                <p><a href="../../../e_gm.htm" target="_top" OnMouseOut="na_restore_img_src('bt_index_bottom', 'document')" OnMouseOver="na_change_img_src('bt_index_bottom', 'document', '../../cliparts/bt_index2.gif', true);"><img src="../../cliparts/bt_index1.gif" width="100" height="22" border="0" name="bt_index_bottom"></a></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="142" height="36" align="center" valign="middle">
+                <p><a href="../../../x_tutor_list.htm" target="_top" OnMouseOut="na_restore_img_src('bt_tutorials__bottom', 'document')" OnMouseOver="na_change_img_src('bt_tutorials__bottom', 'document', '../../cliparts/bt_tutorials_2.gif', true);"><img src="../../cliparts/bt_tutorials_1.gif" width="100" height="22" border="0" name="bt_tutorials__bottom"></a></p>
+            </td>
+        </tr>
+    </table>
+</div>
+<p class="TexteGlossaire" align="right">&nbsp;</p>
+<table border="0" width="294" align="center">
+        <tr>
+            <td width="239" height="31">
+                <p align="right"><font face="Verdana"><b><span style="font-size:9pt;">Want 
+            to contribute to this site ?</span></b></font></p>
+            </td>
+            <td width="45" height="31">
+<p align="center"><a href="z_contribute.htm" target="_top" title="Bring your own contribution !"><img src="../../cliparts/bt_anigreen07_next.gif" width="20" height="20" border="0"></a></p>
+            </td>
+        </tr>
+    </table>
+<p class="EntréeGlossaire">&nbsp;</p>
+<p class="EntréeGlossaire">&nbsp;</p>
+<p class="EntréeGlossaire">&nbsp;</p>
+</body>
+
+</html>

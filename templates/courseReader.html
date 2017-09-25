@@ -1,0 +1,104 @@
+<head>
+
+    %include templates/parts/head.html
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    %include templates/parts/navBar.html
+
+    <div class="container">
+            
+        <!-- Header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="pageHeader">
+                    <h1>
+                        Course Reader
+                    </h1>
+
+                    <p class="subtleHeading"><span class="sidebaricon glyphicon glyphicon-calendar" aria-hidden="true"></span>Last Updated: Sunday June 11th at 3:30p.m.
+                    
+
+                </div>
+                <hr/>
+            </div>
+        </div>
+                
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                	<div class="alert alert-info">
+                    <b>Work in progress</b>: I am putting together my notes into a course reader format. I just started the process yesterday (May 4th) so you are looking at a very rough draft. But I will continue to work hard on it, and update this page as I go.</div>
+                </p>
+               
+               <center>
+				<img style="max-width:100%; width:400px" src="{{pathToRoot}}reader/splash.png">	
+				
+			</center>
+
+            <hr/>
+                     <h2>Errata</h2>
+                
+                <p>
+                    <ul class="list-group">
+                     <li class="list-group-item">
+                        <b>Typo in law of total probability</b>: In an old version of the Conditional Probability handout, I had accidentally wrote the law of total probability as defining P(E|F). I meant to write that it defines P(E)
+                     </li>
+                      
+                     
+                    
+                    </ul>
+                </p>
+
+               
+
+                <hr/>
+
+                <br/><br/>
+                <h2>Probability for Computer Scientists</h2>
+                <h4>From Counting to Deep Learning<br/><br/>
+
+
+                    
+
+                	
+
+               	<p><a href="{{pathToRoot}}reader/1 Counting.pdf"><h3>1. Counting</h3></a>
+               	<p><a href="{{pathToRoot}}reader/2 Probability.pdf"><h3>2. Probability</h3></a>
+               	<p><a href="{{pathToRoot}}reader/3 Conditional.pdf"><h3>3. Conditional Probability</h3></a>
+               	<p><a href="{{pathToRoot}}reader/4 Random Variables.pdf"><h3>4. Random Variables</h3></a>
+               	<p><a href="{{pathToRoot}}reader/5 Discrete Variables.pdf"><h3>5. Discrete Distributions</h3></a>
+               		<p><a href="{{pathToRoot}}reader/6 Continuous Variables.pdf"><h3>6. Continuous Distributions</h3></a>
+               			<p><a href="{{pathToRoot}}reader/7 Multivariate.pdf"><h3>7. Multivariate</h3></a>
+                <p><a href="{{pathToRoot}}reader/8 Probability as a Variable.pdf"><h3>8. Probability as a Variable</h3></a>
+                  <p><a href="{{pathToRoot}}reader/9 Sampling.pdf"><h3>9. Sampling</h3></a>
+
+                    <p><a href="{{pathToRoot}}reader/10 Central Theorems.pdf"><h3>10. Central Theorems</h3></a>
+
+                      <p><a href="{{pathToRoot}}reader/11 Parameter Estimation.pdf"><h3>11. Parameter Estimation</h3></a>
+
+                       <p><a href="{{pathToRoot}}reader/12 Machine Learning.pdf"><h3>12. Machine Learning</h3></a>
+            </div>
+        </div>
+
+
+    
+
+        %include templates/parts/footer.html
+
+    </div>
+
+    <script type="text/javascript">
+        $( ".moment" ).each(function( i ) {
+            var date = $(this).html()
+
+            var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+            $(this).html(fromStr)
+          });
+        //alert(moment("20160101", "YYYYMMDD").fromNow())
+    </script>
+
+</body>

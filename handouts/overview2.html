@@ -1,0 +1,459 @@
+<head>
+
+<title>CS109</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+
+<link href="../plugins/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+<!-- Java Script -->
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/moment.min.js"></script>
+<script src="../plugins/bootstrap-custom/js/bootstrap.min.js"></script>
+<script src="../plugins/ace/ace.js" type="text/javascript"></script>
+
+<!-- Probability Packages -->
+<script src="../plugins/probability/gaussian.js"></script>
+<script src="../plugins/color.js"></script>
+
+
+<!-- Stanford -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand brand" href="../">CS109</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lectures <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+          </ul>
+        </li>-->
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lecture Notes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../pdfs/02 Counting.pdf">2 - Counting</a></li>
+            <li><a href="../pdfs/03 CalculationRef.pdf">3 - Calculation Ref</a></li>
+            <li><a href="../pdfs/05 Combinatorics.pdf">5 - Combinatorics</a></li>
+            <li><a href="../pdfs/06 Probability.pdf">6 - Probability</a></li>
+            <li><a href="../pdfs/07 CondProbability.pdf">7 - Conditional Probability</a></li>
+            <li><a href="../pdfs/08 Independence.pdf">8 - Independence</a></li>
+            <li><a href="../pdfs/10 Random Variables.pdf">10 - Random Variables</a></li>
+            <li><a href="../pdfs/11 Variance.pdf">11 - Variance</a></li>
+            <li><a href="../pdfs/12 Poisson.pdf">12 - Poisson and More</a></li>
+
+            <li><a href="../pdfs/13 Continuous.pdf">13 - Continuous RV</a></li>
+            <li><a href="../pdfs/16 Gaussian.pdf">16 - Gaussian</a></li>
+            <li><a href="../pdfs/17 StandardNormalTable.pdf">17 - Standard Normal</a></li>
+            <li><a href="../pdfs/18 Joint.pdf">18 - Joint Distributions</a></li>
+            <li><a href="../pdfs/19 MoreJointProperties.pdf">19 - More Joint Properties</a></li>
+            <li><a href="../pdfs/20 ConvolutionAndConditional.pdf">20 - Convolution and Conditional</a></li>
+            <li><a href="../pdfs/22 Beta.pdf">22 - Beta Distributions</a></li>
+            <li><a href="../pdfs/27 VarianceFromEvents.pdf">27 - Variance From Events</a></li>
+            <li><a href="../pdfs/28 CovarianceAndSamples.pdf">28 - Covariance and Samples</a></li>
+            <li><a href="../pdfs/29 Correlation.pdf">29 - Correlation</a></li>
+            <li><a href="../pdfs/30 CondExpectation.pdf">30 - Conditional Expectation</a></li>
+            <li><a href="../pdfs/31 CentralTheorems.pdf">31 - Central Theorems</a></li>
+            <li><a href="../pdfs/34 ParameterEstimation.pdf">34 - Parameter Estimation</a></li>
+            <li><a href="../pdfs/35 MaximumLikelihood.pdf">35 - Maximum Likelihood</a></li>
+            <li><a href="../pdfs/37 MaximumAPosteriori.pdf">37 - Maximum A Posteriori</a></li>
+
+            <li><a href="../pdfs/39 NaiveBayes.pdf">39 - Naive Bayes</a></li>
+
+            <li><a href="../pdfs/40 LogisticRegression.pdf">40 - Logistic Regression</a></li>
+            <li><a href="../pdfs/41 DeepLearning.pdf">41 - Deep Learning</a></li>
+            
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Problem Sets<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../pdfs/04 ProblemSet1.pdf">Problem Set 1</a></li>
+            <li><a href="../pdfs/09 ProblemSet2.pdf">Problem Set 2</a></li>
+            <li><a href="../pdfs/15 ProblemSet3.pdf">Problem Set 3</a></li>
+            <li><a href="../pdfs/23 ProblemSet4.pdf">Problem Set 4</a></li>
+            <li><a href="../pdfs/32 ProblemSet5.pdf">Problem Set 5</a></li>
+            <li><a href="../pdfs/38 ProblemSet6.pdf">Problem Set 6</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li><a href="../pdfs/01 Administrivia.pdf">Administrivia</a></li>
+           <!--<li><a href="../pdfs/01 Administrivia.pdf">Lecture Notes Errata</a></li>-->
+           <li><a href="../pdfs/17 StandardNormalTable.pdf">Standard Normal (Phi)</a></li>
+           <li><a href="../pdfs/21 PracticeMidterm.pdf">Practice Midterm</a></li>
+           <li><a href="../pdfs/24 PracticeMidtermSoln.pdf">Practice Midterm Soln</a></li>
+           <li><a href="../pdfs/26 MidtermReviewSession.pdf">Midterm Review Session</a></li>
+           <li><a href="../pdfs/25 Notation.pdf">Notation Reference</a></li>
+           <li><a href="../handouts/videoExamples.html">Video Examples</a></li>
+           <li><a href="../problem12.html">Titanic Dataset</a></li>
+           <li><a href="../handouts/datasets.html">Machine Learning Datasets</a></li>
+           <li><a href="../pdfs/42 PracticeFinal.pdf">Practice Final</a></li>
+           <li><a href="../pdfs/43 PracticeFinalSoln.pdf">Practice Final Soln</a></li>
+           <li><a href="../handouts/extraProblems.html">Extra Practice Problems</a></li>
+           <!--<li><a href="../pdfs/01 Administrivia.pdf">Midterm Info</a></li>-->
+
+          </ul>
+        </li>
+
+
+
+        
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../demos/serendipity.html">Serendipity</a></li>
+            <li><a href="../demos/naturalBayes.html">Medical Tests</a></li>
+            <li><a href="../demos/jurors.html">Representative Juries</a></li>
+            <li><a href="../demos/cdf.html">Normal Calculator</a></li>
+            <li><a href="../demos/imageDist.html">CS109 Logo</a></li>
+            <li><a href="../demos/beta.html">Beta</a></li>
+            <li><a href="../demos/likelihood/">Likelihood</a></li>
+           <!--<li><a href=""><i>None yet!</i></a></li>-->
+
+          </ul>
+        </li>
+
+        <li><a href="../handouts/staff.html">Office Hours</a></li>
+       
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="..//handouts/overview.html"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Overview</a></li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Course Overview
+					</h1>
+					<p>
+						Created by Chris Piech
+					</p>
+					
+
+				</div>
+				<hr/>
+
+				<center>
+					<!--<img style="width:80%" src="../img/overview/overview.png">-->	
+				</center>
+			</div>
+		</div>
+
+			
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					The main objective of CS109 are to learn the foundations of probability so that it can help you build and understand computer science algorithms.
+				</p>
+
+				<hr/>
+			</div>
+		</div>
+		
+		
+				
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					Schedule
+				</h2>
+				<p>
+					The schedule is subject to change by the management at any time with high probability.
+				</p>
+				<p>
+
+					<div class="overview-table-title"> 
+						<ul class="overview-table-list"> 
+							<li class="overview-table-list-li-title"> 
+								<p style="text-align:center !important"><b>Monday</b></p>
+							</li> 
+							<li class="overview-table-list-li-title"> 
+								<p style="text-align:center !important"><b>Wednesday</b></p>
+							</li>
+							<li class="overview-table-list-li-title"> 
+								<p style="text-align:center !important"><b>Friday</b></p>
+							</li>
+						</ul>
+					</div>
+
+
+					<div class="overview-table"> 
+						<ul class="overview-table-list"> 
+							<li class="overview-table-list-li counting"> 
+								<p class="subtleHeading">March 28th</p>
+								<div class="overview-class-title">
+									<a href="#">Counting</a>
+								</div>
+								<br/><br/>
+								<span class="overview-reading">Chapter 1.1-1.2</span>
+								
+							</li> 
+							<li class="overview-table-list-li counting">
+								<p class="subtleHeading">March 30th</p>
+								<div class="overview-class-title">
+									Combinatorics
+								</div>
+								<br/><br/>
+								<span class="overview-reading">Chapter 1.3-1.6</span>
+
+							</li>
+							<li class="overview-table-list-li counting"> 
+								<p class="subtleHeading">April 1st</p>
+								<div class="overview-class-title">
+									Axioms of Probability
+								</div>
+								<br/><br/>
+								<span class="overview-reading">Ch 2.1-2.5, 2.7</span>
+							</li>
+						</ul>
+					</div>
+					<div class="overview-table"> 
+						<ul class="overview-table-list"> 
+
+
+							<li class="overview-table-list-li counting"> 
+								<p class="subtleHeading">March 28th</p>
+								<div class="overview-class-title">
+									<a href="#">Counting</a>
+								</div>
+								<span class="overview-reading">Chapter 1</span>
+								
+							</li> 
+							<li class="overview-table-list-li counting">
+								<p class="subtleHeading">March 30th</p>
+								<div class="overview-class-title">
+									Combinatorics
+								</div>
+								<span class="overview-reading">Chapter 1</span>
+
+							</li>
+							<li class="overview-table-list-li counting"> 
+								<p class="subtleHeading">April 1st</p>
+								<div class="overview-class-title">
+									Axioms of Probability
+								</div>
+								<span class="overview-reading">Chapter 1</span>
+							</li>
+						</ul>
+					</div>
+				</p>
+				<!--<hr/>-->
+			</div>
+		</div>
+
+		<!--<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					Discussion Sections
+				</h2>
+				<p>
+					In addition to lecture, you must sign up for a weekly 50-minute section. In order to take
+CS 106B, you must sign up for a section between 5:00P.M., Thursday, January 7, and the
+close of enrollments at 5:00P.M. on Sunday, January 10. Please use the signup form at
+<a href="http://cs198.stanford.edu/section/">http://cs198.stanford.edu/section/</a>. Important note: Do not use Axess to sign
+up for sections; section enrollments made through Axess are simply ignored.
+				</p>
+				<hr/>
+			</div>
+		</div>-->
+
+		<!--<div class="row" id="grades">
+			<div class="col-sm-12">
+				<h2>
+					Grades
+				</h2>
+				<p>
+					Your final grade in this course will be calculated using the following weights:
+				</p>
+				<div class="well" style="width:280px">
+					<h4>Weights</h4>
+					<table class="table table-condensed" style="margin-bottom:0px;">
+						<tbody>
+							<tr>
+								<td style="width: 180px">Section Participation</td>
+								<td>10%</td>
+							</tr>
+							<tr>
+								<td style="width: 120px">Programs</td>
+								<td>50%</td>
+							</tr>
+							<tr>
+								<td style="width: 120px">Midterm</td>
+								<td>15%</td>
+							</tr>
+							<tr>
+								<td style="width: 120px">Final</td>
+								<td>25%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					
+					Each of the exams is scaled to take account of the difficulty of the exam, which is nearly
+impossible to assess in advance. The other components and the final grade are not
+curved. If everyone does brilliantly in this class, everyone gets an A.
+				</p>
+				<hr/>
+			</div>
+		</div>-->
+
+		
+
+		<!--<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					Programming Assignments
+				</h2>
+				<p>
+					CS 106B requires seven programming assignments, which are due on the dates given in
+the syllabus. Except for Assignment #7 (which is due at the very end of the quarter),
+your section leader will grade each of your assignments and then discuss how well you
+have done (and how you can improve on future assignments) in an interactive,
+one-on-one session. Assignments are graded separately for functionality and style.
+				</p>
+				<hr/>
+			</div>
+		</div>
+			
+		<div class="row">
+			<div class="col-sm-8">
+			<h2>
+				Late Policy
+			</h2>
+		</div>
+			<div class="col-sm-9">
+				
+
+				<div class="subsection">
+					
+					<p>
+						Each of the assignments is due at 5:00P.M. on the day specified in the syllabus.
+Assignments are submitted electronically using the procedure described in the first
+assignment. Important note: all assignments are due at 5:00P.M. sharp on the dates
+indicated on the assignment handout. Assignments submitted after 5:00 will be
+considered late.
+					</p>
+					<p>
+						Because each of you will probably come upon some time during the quarter where so
+much work piles up that you need a little extra time, every student begins the quarter with
+three free “late days.” To avoid any ambiguity, a “day” is defined as a class day. Thus, if
+your assignment was due on Friday but turned in the following Monday, that assignment
+would be one day late. Note: You cannot use late days on Assignment #7, which is due at the end of the quarter. After your late days for the quarter are exhausted, programs are assessed a late
+penalty of one category point per late day used (a ✓+ turns into a ✓, and so forth). Late
+days are valuable, and it pays to keep some around for the harder assignments toward the
+end of the quarter. In all cases, assignments must be turned in within a calendar week of
+their published due date.
+					</p>
+
+					<p>
+						In special circumstances (such as extended medical problems or other emergencies),
+extensions may be granted beyond the late days. To request an extension, send e-mail to
+the TA (Megan Faulk <mfaulk@stanford.edu>) no later than 24 hours before the
+program is due. Only the TA is authorized to approve such extensions. In particular, do
+not ask your section leader.
+					</p>
+				</div>
+
+				
+
+				
+
+			</div>
+			<div class="col-sm-3">
+				
+				<div class="faq well">
+					<h4 class="subheading">How Many Late Days?</h4>
+					<p>
+						Three late days. A “day” is defined as a class day.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>-->
+
+
+	
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<hr>
+
+		<div class="footer">
+			<p class="pull-left">
+				&#169; Stanford 2016 &#124; Created by 
+				<a href="http://stanford.edu/~cpiech">Chris</a>.
+				CS109 has been developed by many talented teachers. Special thanks to Mehran Sahami.
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+	</div>
+
+	<script type="text/javascript">
+		$( ".moment" ).each(function( i ) {
+			var date = $(this).html()
+
+			var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+			$(this).html(fromStr)
+		  });
+		//alert(moment("20160101", "YYYYMMDD").fromNow())
+	</script>
+
+</body>

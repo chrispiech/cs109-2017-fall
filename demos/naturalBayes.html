@@ -1,0 +1,428 @@
+<head>
+
+<title>CS109</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+
+<link href="../plugins/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../style.css">
+
+<!-- Java Script -->
+<script src="../plugins/jquery.min.js"></script>
+<script src="../plugins/moment.min.js"></script>
+<script src="../plugins/bootstrap-custom/js/bootstrap.min.js"></script>
+<script src="../plugins/ace/ace.js" type="text/javascript"></script>
+
+<!-- Probability Packages -->
+<script src="../plugins/probability/gaussian.js"></script>
+<script src="../plugins/color.js"></script>
+
+
+<!-- Stanford -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+
+	<script src="../plugins/math.min.js"></script>
+	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand brand" href="..//">CS109</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lectures <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+          </ul>
+        </li>-->
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lecture Notes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+
+            <li><a href="../pdfs/02 Counting.pdf">1 - Counting</a></li>
+            <!--<li><a href="../lectureHandouts/2 Combinatorics.pdf">2 - Combinatorics</a></li>
+            <li><a href="../lectureHandouts/3 Probability.pdf">3 - Probability</a></li>
+            <li><a href="../lectureHandouts/4 Conditional Probability.pdf">4 - Conditional Probability</a></li>
+            <li><a href="../lectureHandouts/5 Independence.pdf">5 - Independence</a></li>
+            <li><a href="../lectureHandouts/6 Random Variables.pdf">6 - Random Variables</a></li>
+            <li><a href="../lectureHandouts/7 Variance.pdf">7 - Variance</a></li>
+            <li><a href="../lectureHandouts/8 More Discrete.pdf">8 - Poisson and More</a></li>
+            <li><a href="../lectureHandouts/9 Continuous Variables.pdf">9 - Continuous Variables</a></li>
+             <li><a href="../lectureHandouts/10 Gauss.pdf">10 - Gauss</a></li>
+             <li><a href="../lectureHandouts/11 Exponential and Joint.pdf">11 - Exponential and Joint</a></li>
+             <li><a href="../lectureHandouts/12 Continuous and Multinomial Joint.pdf">12 - Continuous and Multinomial Joint</a></li>
+             <li><a href="../lectureHandouts/13 Properties of Joint Distributions.pdf">13 - Properties of Joint Distributions</a></li>
+             <li><a href="../lectureHandouts/14 Convolution and Conditional.pdf">14 -  Convolution and Conditional</a></li>
+             <li><a href="../lectureHandouts/15 Beta.pdf">15 -  Beta</a></li>
+             <li><a href="../lectureHandouts/16 Great Expectations.pdf">16 -  Great Expectations</a></li>
+             <li><a href="../lectureHandouts/17 Covariance and Correlation.pdf">17 - Covariance and Correlation</a></li>
+             <li><a href="../lectureHandouts/18 Samples and Bootstrap.pdf">18 - Samples</a></li>
+             <li><a href="../lectureHandouts/19 CLT.pdf">19 - CLT</a></li>
+             <li><a href="../lectureHandouts/20 MLE.pdf">20 - MLE</a></li>
+             <li><a href="../lectureHandouts/21 MAP.pdf">21 - MAP</a></li>
+             <li><a href="../lectureHandouts/22 Naive Bayes.pdf">22 - Naive Bayes</a></li>
+             <li><a href="../lectureHandouts/23 Logistic Regression.pdf">23 - Logistic Regression</a></li>
+              <li><a href="../lectureHandouts/24 Deep Learning.pdf">24 - Deep Learning</a></li>-->
+            
+            
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Problem Sets<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+             <li><a>None Yet</a></li>
+
+             
+           
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li><a href="../pdfs/01 Administrivia.pdf">Administrivia</a></li>
+           
+
+          </ul>
+        </li>
+
+
+
+        
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>None Yet</a></li>
+
+          </ul>
+        </li>
+
+        <li><a href="../handouts/staff.html">Office Hours</a></li>
+       
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../schedule.html"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Schedule</a></li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Medical Tests
+					</h1>
+					<p class="subtleHeading">
+						April 4th, 2016
+					</p>
+					
+
+				</div>
+				<hr/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+
+				
+				
+				<p>
+					<center>
+						<img src = "../img/random/medtest.jpg" style="max-width:100%"></img>
+					</center>
+				</p>
+				<!--<p>
+					<center>
+					<i>The word serendipity comes from the  Persian fairy tale of the <a href="https://en.wikipedia.org/wiki/The_Three_Princes_of_Serendip">Three Princes of Serendip</a></i>
+					</center>
+				</p>-->
+			</p>
+			<hr/>
+				<h2>Problem</h2>
+				<p>
+					In this problem we are going to calculate the probability that a patient has an illness given a positive test-result for the illness. A positive test result means the test thinks the patient has the illness.
+				</p>
+
+				<p>
+					Things that we know: Naturally 8% of the population has the illness. The test returns a positive result 95% of the time for patients who have the illness. The test resturns a positive result 7% of the time for people who <b>do not</b> have the illness. 
+				</p>
+				<p>
+					This example was origianlly presented in the context of the Mamogram test for breast cancer. I appreciate that may be sensitive to some of you. The seriousness of cancer underscores the potential for bayesian probability to be applied to important contexts.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Natural % of population with illness</label>
+				    <input type="number" class="form-control" id="priorInput" value="8">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Probability of a positive result given the patient has illness</label>
+				    <input type="number" class="form-control" id="condInput" value="0.95">
+				  </div>
+				  <div class="form-group">
+				    <label for="exampleInputPassword1">Probability of a positive result given the patient does not have illness</label>
+				    <input type="number" class="form-control" id="condNegInput" value="0.07">
+				  </div>
+				  
+				  <button type="submit" class="btn btn-success" onclick="calculate();">Calculate</button>
+
+				  <hr/>
+
+				  <h2>Answer</h2>
+				  <p>
+				  	The probability that the patient has the illness given a positive test result is: <span class="ansValue"></span>
+				  </p>
+				 
+				  <div id="explination" style="display:none">
+				  	 <hr/>
+					  <h2>Terms</h2>
+					  <div id="answer">
+					  	<p>
+					  		First lets define some useful terms:<br/>
+					  	</p>
+					  	<p>
+					  				Let $F$ be the event that the patient has the illness<br/>
+					  				Let $E$ be the event that the test result is positive<br/>
+					  				$p(F|E)$ = probability of the illness given a positive test. This is the number we want to calculate.<br/>
+					  				$p(E|F)$ = probability of a positive result given illness = <span class="condValue"></span><br/>
+					  				$P(E|F^c)$ = probability of a positive result given no illness = <span class="condNegValue"></span><br/>
+					  				$P(F)$ = natural probability of the illness = <span class="priorValue"></span>
+					  	</p>
+					  	<hr/>
+					  	<h2>Bayes Theorem</h2>
+					  	<p>
+					  		In this problem we know $P(F|E)$ but we want to know $P(E|F)$. We can apply Bayes Theorem to turn our knowledge of one conditional into knowledge of the reverse.
+					  	</p>
+
+					  	<p style="font-size:120%">
+					  		$P(F|E) = \frac{P(E|F)P(F)}{P(E|F)P(F) + P(E|F^c)P(F^c)}$
+					  	</p>
+					  		Now all we need to do is plug values into this formula. The only value we don't explicitly have is $P(F^c)$. But we can simply calculate it since $P(F^c) = 1 - P(F)$. Thus:
+						</p>
+
+						<p style="font-size:120%" id="bayesApplied">
+					  		
+					  	</p>
+					  	<hr/>
+						<h2>Natural Frequency Intuition</h2>
+						<p>
+							One way to build intuition for Bayes Theorem is to think about "natural frequences". Imagine we have 1000 people. Let's think about how many of those have the illness and test positive and how many don't have the illness and test positive.
+						</p>
+						<p>
+							We are going to color people who <span style="color:LightSkyBlue"><b>have the illness</b></span> in blue and those <span style="color:LightPink"><b>without the illness</b></span> in pink (those colors do not imply gender!). 
+						</p>
+						<p>
+							$1000 \times P(F)$ people have the illness<br/>
+							$1000 \times (1- P(F))$ people do not have the illness.
+						</p>
+						<p>
+							A certain number of people <span style="color:DodgerBlue"><b>with the illness will test positive</b></span> (which we will draw in Dark Blue) and a certain number of people <span style="color:HotPink"><b>without the illness will test positive</b></span> (which we will draw in Dark Pink):
+						</p>
+						<p>
+							$1000 \times P(F) \times P(E|F)$ people have the illness and test positive<br/>
+							$1000 \times P(F^c) \times P(E|F^c)$ people do not have the illness and test positive.
+						</p>
+						<p>
+							Here is the whole population of 1000 people:
+						</p>
+
+						<p>
+							<canvas style="width:100%; height:370px;" id="naturalFrequencyCanvas"></canvas>
+						</p>
+						<p>
+							
+							The number of people who test positive and have the illness is <span class="naturalTruePosValue">?</span>. <br/>
+							The number of people who test positive and don't have the illness is <span class="naturalFalsePosValue">?</span>. <br/>
+							The total number of people who test positive is <span class="naturalPosValue">?</span>. 
+						</p>
+						<p>
+							Out of the people who test positive, the fraction that have the illness is <span class="naturalTruePosValue">?</span>/<span class="naturalPosValue">?</span> = <span class="naturalAprox">?</span> which is a close approximation of the answer. If instead of using 1000 imaginary people, we had used more, the approximation would have been even closer to the actual answer (which we calculated using Bayes Theorem).
+						</p>
+					</div>
+				
+				</div>
+			</div>
+
+
+
+			
+		</div>
+
+		
+		
+		
+				
+		<script>
+			function calculate() {
+				var cond = $("#condInput").val() 
+				var condNeg = $("#condNegInput").val()
+				var prior = $("#priorInput").val() / 100
+
+				/*if(cond > 1 || cond < 0 || condNeg > 1 || condNeg < 0) {
+					alert("all probabilities must be between 0 and 1");
+					return;
+				}*/
+
+				
+
+				var ans = (cond * prior) / (cond * prior + condNeg * (1 - prior))
+				ans = ans.toFixed(4)
+
+				$(".condValue").html(cond)
+				$(".condNegValue").html(condNeg)
+				$(".priorValue").html(prior)
+				$(".ansValue").html(ans)
+
+				$("#bayesApplied").html('$P(F|E) = \\frac{('+ cond +')('+ prior +')}{('+cond+')('+prior+') + ('+condNeg+')(1 - ' + prior+')} = '+ans+'$');
+
+				MathJax.Hub.Queue(["Typeset",MathJax.Hub, "bayesApplied"]);
+				$("#explination").show()
+
+				drawNaturalFrequencies(prior, cond, condNeg);
+			}
+
+			function drawNaturalFrequencies(prior, cond, condNeg){
+				var width = $("#naturalFrequencyCanvas").outerWidth();
+				var height =  0.6* width;
+				$("#naturalFrequencyCanvas").height(height);
+				console.log($("#naturalFrequencyCanvas").height())
+				console.log()
+				var canvas = document.getElementById('naturalFrequencyCanvas');
+				canvas.width = width;
+				canvas.height = height;
+				var ctx = canvas.getContext('2d');
+
+				var N_ROWS = 20
+				var N_COLS = 50
+				var SPACING = 5
+
+				var ICON_WIDTH = (width - (N_COLS - 1)*SPACING) / N_COLS
+				var ICON_HEIGHT = (height - (N_ROWS - 1) * SPACING) / N_ROWS
+				console.log(ICON_WIDTH)
+				console.log(ICON_HEIGHT)
+
+				var numSick = prior * 1000
+				var numSickPos = numSick * cond
+				var numHealthPos = (1-prior) * 1000 * condNeg
+				
+
+				var index = 0
+				for (var c = 0; c < N_COLS; c++) {
+			    	for(var r = 0; r < N_ROWS; r++) {
+			    		if(index < numSickPos){
+			    			ctx.fillStyle = "DodgerBlue";
+			    		} else if(index < numSick){
+			    			ctx.fillStyle = "LightSkyBlue";
+			    		} else if(index < numSick + numHealthPos) {
+			    			ctx.fillStyle = "HotPink";
+			    		} else {
+			    			ctx.fillStyle = "LightPink";
+			    		}
+			    		var x = c * (SPACING + ICON_WIDTH)
+			    		var y = r * (SPACING + ICON_HEIGHT)
+			    		drawPerson(ctx, x, y, ICON_WIDTH, ICON_HEIGHT)
+			    		index++
+			    		
+			    	}
+			    }
+
+			    var numPos = Math.ceil(numSickPos) + Math.ceil(numHealthPos)
+			    var naturalAprox = (Math.ceil(numSickPos) / numPos).toFixed(4)
+			    $(".naturalPosValue").html(numPos);
+			    $(".naturalTruePosValue").html(Math.ceil(numSickPos));
+			    $(".naturalFalsePosValue").html(Math.ceil(numHealthPos));
+			    $(".naturalAprox").html(naturalAprox)
+			}
+
+			function drawPerson(ctx, x, y, width, height) {
+				// head
+				var headRadius = height * 0.15
+				filledCircle(ctx, x + width * 0.5, y + headRadius, headRadius);
+
+				// arms
+				ctx.fillRect(x, y + height * 0.3, width, height *.4)	
+
+				// body
+				ctx.fillRect(x + width *.15, y + height * 0.3, width*.7, height *.8)
+			}
+
+			function filledCircle(ctx, x, y, r) {
+				ctx.beginPath();
+				ctx.arc(x, y, r, 0, Math.PI*2, true); 
+				ctx.closePath();
+				ctx.fill();
+			}
+			
+			
+		</script>
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<hr>
+
+		<div class="footer">
+			<p class="pull-left">
+				&#169; Stanford 2017 &#124; Created by 
+				<a href="http://stanford.edu/~cpiech">Chris</a>.
+				CS109 has been developed by many talented teachers. Special thanks to Mehran Sahami.
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+	</div>
+
+</body>

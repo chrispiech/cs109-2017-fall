@@ -1,0 +1,293 @@
+<head>
+
+	%include templates/parts/head.html
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+
+	<script src="http://cdn.jsdelivr.net/jstat/1.5.2/jstat.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.1.0/math.min.js"></script>
+	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+	<style>
+		.axis path,
+	    .axis line {
+	        fill: none;
+	        stroke: #000;
+	        shape-rendering: crispEdges;
+	    }
+	    .line {
+	        fill: none;
+	        stroke: steelblue;
+	        stroke-width: 1.5px;
+	    }
+	    .area {
+		    fill: lightsteelblue;
+		    stroke-width: 0;
+		}
+    </style>
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Beta Probability Density Function
+					</h1>
+					
+
+				</div>
+				<hr/>
+
+				<p>
+					The Beta distribution is the distribution most often used as the distribution of probabilities.
+				</p>
+				<hr/>
+
+				<h2> Parameters</h2>
+				<form class="form-inline">
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-4 control-label">a: &nbsp;&nbsp;</label>
+				    <div class="col-sm-4">
+				      <input type="number" class="form-control" id="inputAlpha" value="8">
+				    </div>
+				  </div>
+				 </form>
+				  <form class="form-inline">
+				  <div class="form-group">
+				    <label for="inputPassword3" class="col-sm-4 control-label">b: </label>
+				    <div class="col-sm-4">
+				      <input type="number" class="form-control" id="inputBeta" value="2">
+				    </div>
+				  </div>
+				  </form>
+				  
+				 <p>
+				  <button class="btn btn-primary" onclick="calculate()" style="font-family:monospace">beta pdf</button>
+				</p>
+				
+				
+
+				<div id="hidden" style="display:none">
+					<hr/>
+							<h2>Beta PDF</h2>
+							<div style="width:500px; height:370px;" id="pdfDiv"></div>
+				</div>
+				
+
+			</div>
+		</div>
+
+		
+		
+		
+		
+				
+		<script>
+
+			function calculate() {
+				var alpha = Number($("#inputAlpha").val())
+				var beta = Number($("#inputBeta").val())
+				console.log(alpha)
+				console.log(beta)
+				console.log(this.jStat.beta.pdf(0.5, alpha, beta))
+				
+				
+				$("#pdfDiv").html("")
+				drawBetaPDF(pdfDiv, alpha, beta);
+				$("#hidden").show()
+
+			}
+
+			function drawBetaPDF(parentDivId, alpha, beta) {
+				var xMin = 0
+				var xMax = 1
+				var xStep = 0.1
+		    	//setting up empty data array
+				var data = [];
+				var maxP = 0;
+				var parentDiv = $(parentDivId)
+				getData(alpha, beta); // popuate data 
+		    	// line chart based on http://bl.ocks.org/mbostock/3883245
+				var margin = {
+			        top: 10,
+			        right: 20,
+			        bottom: 50,
+			        left: 60
+			    };
+		    	width = parentDiv.width() - margin.left - margin.right,
+			    height = parentDiv.height() - margin.bottom - margin.top;
+
+				var x = d3.scale.linear()
+				    .range([0, width]);
+
+				var y = d3.scale.linear()
+				    .range([height, 0]);
+
+				var xAxis = d3.svg.axis()
+				    .scale(x)
+				    .orient("bottom")
+				    .tickValues(range(xMin, xMax, xStep))
+				    
+				var yTicks = range(0, maxP * 1.2, maxP/9)
+				var yAxis = d3.svg.axis()
+				    .scale(y)
+				    .orient("left")
+				    .tickValues(yTicks);
+
+				var line = d3.svg.line()
+				    .x(function(d) {
+				        return x(d.q);
+				    })
+				    .y(function(d) {
+				        return y(d.p);
+				    });
+
+				var svg = d3.select(parentDivId).append("svg")
+				    .attr("width", width + margin.left + margin.right)
+				    .attr("height", height + margin.top + margin.bottom)
+				    .append("g")
+				    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+				var area = d3.svg.area()
+				    .x(function(d) {
+				        return x(d.q);
+				    })
+				    .y(function(d) {
+				        return y(d.p);
+				    });
+
+
+				x.domain(d3.extent(data, function(d) {
+				    return d.q;
+				}));
+				y.domain(d3.extent(yTicks, function(d) {
+				    return d;
+				}));
+
+				
+
+
+				svg.append("g")
+				    .attr("class", "x axis")
+				    .attr("transform", "translate(0," + height + ")")
+				    .call(xAxis);
+
+				
+				svg.append("g")
+				    .attr("class", "y axis")
+				    .call(yAxis);
+
+				// text label for the x axis
+				svg.append("text")      
+			        .attr("x", width / 2 )
+			        .attr("y",  height + 40 )
+			        .style("text-anchor", "middle")
+			        .text('x');
+
+			    // text label for the y axis
+			 	var padding = 9 -margin.left
+				svg.append("text")
+		            .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
+		            .attr("transform", "translate("+ padding +","+(height/2)+")rotate(-90)")  // text is drawn off the screen top left, move down and out and rotate
+		            .text("Probability Density");
+
+				svg.append("path")
+				    .datum(data)
+				    .attr("class", "line")
+				    .attr("d", line);
+
+
+				function getData(alpha, beta) {
+					// loop to populate data array with 
+					// probabily - quantile pairs
+					maxP = 0
+					for (var x = 0; x < 1; x+= 0.01) {
+					    var p = this.jStat.beta.pdf(x, alpha, beta) // calc prob of rand draw
+
+					    el = {
+					        "q": x,
+					        "p": p
+					    }
+					    if(p > maxP) maxP = p;
+					    data.push(el)
+					};
+					console.log(maxP)
+
+					// need to sort for plotting
+					//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+					data.sort(function(x, y) {
+					    return x.q - y.q;
+					});	
+				}
+
+		    
+		    function range(start, end, step) {
+			    var range = [];
+			    var typeofStart = typeof start;
+			    var typeofEnd = typeof end;
+
+			    if (step === 0) {
+			        throw TypeError("Step cannot be zero.");
+			    }
+
+			    if (typeofStart == "undefined" || typeofEnd == "undefined") {
+			        throw TypeError("Must pass start and end arguments.");
+			    } else if (typeofStart != typeofEnd) {
+			        throw TypeError("Start and end arguments must be of same type.");
+			    }
+
+			    typeof step == "undefined" && (step = 1);
+
+			    if (end < start) {
+			        step = -step;
+			    }
+
+			    if (typeofStart == "number") {
+
+			        while (step > 0 ? end >= start : end <= start) {
+			            range.push(start);
+			            start += step;
+			        }
+
+			    } else if (typeofStart == "string") {
+
+			        if (start.length != 1 || end.length != 1) {
+			            throw TypeError("Only strings with one character are supported.");
+			        }
+
+			        start = start.charCodeAt(0);
+			        end = end.charCodeAt(0);
+
+			        while (step > 0 ? end >= start : end <= start) {
+			            range.push(String.fromCharCode(start));
+			            start += step;
+			        }
+
+			    } else {
+			        throw TypeError("Only string and number types are supported");
+			    }
+
+			    return range;
+
+			}
+		}
+		    
+
+			
+		</script>
+
+		%include templates/parts/footer.html
+
+	</div>
+
+</body>

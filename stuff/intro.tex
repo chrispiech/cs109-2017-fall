@@ -1,0 +1,176 @@
+% This is a comment!
+
+% This is the document declaration (with default fontsize)
+\documentclass[12pt]{article}
+
+% these are some useful packages. these add functionality to your document
+\usepackage{amsmath}  % math symbols
+\usepackage{wrapfig}  % in case you want to use a figure
+\usepackage{hyperref} % add hyper links
+
+% This package controls the margins of the page.
+\usepackage[top=1in, bottom=1in, left=0.8in, right=1in]{geometry}
+
+\usepackage{multicol} % in case you want to use multiple columns
+\setlength{\columnsep}{0.1pc}
+
+
+% document headers!
+\title{Super-quick \LaTeX\; Intro for CS109}
+\author{Juan Batiz-Benet -- \texttt{jbenet@cs.stanford.edu}}
+\date{\today} % today does the right thing
+
+% begin the document
+\begin{document}
+
+  % actually insert the title.
+  \maketitle
+
+  \section{Intro}
+  \LaTeX \; is a very powerful typesetting system. It's like a word-processor on
+  steroids. It produces \emph{beautiful} looking type, and does so in an elegant
+  way. Learn more about it over at \url{http://www.latex-project.org/} and
+  \url{http://en.wikibooks.org/wiki/LaTeX}. The basic idea is that you work
+  on documents like you would a program; that is, you work on \emph{source}, and
+  then ``compile'' it into a multitude of formats (pdf, html, etc.). It is also
+  \emph{the} way CS research papers are written these days. \\
+
+  For the CS student, it poses many advantages over other type-setting systems,
+  including the old pen and paper. In my opinion, some big bonuses are:
+  \begin{enumerate}
+    \item it looks very professional (and awesome)
+    \item Writing things out is messy: pencil and ink very quickly turn into
+          mush.
+    \item Changing answers is easy, no need to erase everything and start over.
+    \item Its code! Problem Sets are much friendlier when they compile!
+    \item You can Version Control it.
+    \item If you already type things out, \LaTeX \; will make your life easier,
+          by separating view from content, letting you focus on (super-portable)
+          content.
+  \end{enumerate}
+
+  I could go on and on, but you'll likely find more convincing, better arguments
+  about it on the web. \\
+
+  Be warned, however, that \LaTeX \; is a bit complicated
+  to use, and it has a learning curve. So if you definitely want to try it out,
+  allot some time to learning it and actually typing things out. Get your \LaTeX
+  environment setup now, and try it out with the first problems. Then you can
+  decide whether you'll stick with it for the rest of the problem set or not. \\
+
+  To help you get started, we've provided the source to this intro and the first
+  problem set questions. The next sub-section gives some pointers for
+  installation. The rest of this intro tries to give you basic examples of how
+  to mark up various things.
+
+  \subsection{Installing \LaTeX}
+
+  \subsubsection{Linux/BSD}
+
+    \LaTeX \; is most-likely available in your favorite package manager. For
+    Debian/Ubuntu:
+    \begin{center}
+      \texttt{sudo apt-get install texlive}
+    \end{center}
+
+  \subsubsection{Mac}
+
+    Install \href{http://www.tug.org/mactex/}{MacTex}.
+    MacText is a \emph{huge} package, but you only really need a subset of it.
+    Go over to the Smaller Packages
+    (\url{http://www.tug.org/mactex/morepackages.html}) section, and download
+    BasicTeX. Your workflow will look like:
+    \begin{enumerate}
+      \item Write things into a \texttt{file.tex}
+      \item compile into a pdf from a shell with: \texttt{pdflatex file.tex}
+      \item view \texttt{file.pdf} with Preview! (you can keep it open, it
+            updates when changed)
+    \end{enumerate}
+
+  \subsubsection{Windows}
+
+  I don't have good pointers, but check out \url{http://stackoverflow.com/questions/270121/best-latex-editor-for-windows}
+
+  \newpage
+
+  \section{Sections!}
+  The rest of this intro just displays some simple constructs. Check out the
+  source to see how to do it!
+
+  \subsection{Subsection}
+  blah blah blah blah blah blah blah blah blah blah blah blah blah
+
+  \subsubsection{sub-subsection}
+  blah blah blah blah blah blah blah blah blah blah blah blah blah
+
+  \section{Paragraphs}
+
+  \paragraph{} some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text.
+
+  \paragraph{With a heading} some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text.
+
+  \section{Lists}
+
+  \subsection{Bulletted}
+
+    \begin{itemize}
+      \item item
+      \item item
+      \item sub list:
+      \begin{itemize}
+        \item item
+        \item item
+      \end{itemize}
+    \end{itemize}
+
+
+  \subsection{Enumerated}
+
+    \begin{enumerate}
+      \item item
+      \item item
+      \item sub list:
+      \begin{enumerate}
+        \item item
+        \item item
+      \end{enumerate}
+    \end{enumerate}
+
+  \subsection{Mixed}
+
+    \begin{itemize}
+      \item item
+      \item item
+      \item sub list:
+      \begin{enumerate}
+        \item item
+        \item item
+      \end{enumerate}
+    \end{itemize}
+
+  \section{Math}
+
+  \subsection{math mode}
+
+  \LaTeX uses ``math mode'' to insert mathematical equations or symbols. For mathematical expressions inlined, use \$ ... \$: $5a + 3b = 65$. For mathematical expressions in their own line:
+
+  \[ 5a + 3b = 65 \]
+
+  For multiple-lined (aligned) mathematical expressions use:\\
+  \begin{align*}
+    A &= 5A + 5 + 5 + 10 \\
+    6A &= 20 \\
+    A &= \frac{20}{6}
+  \end{align*}
+
+  \subsection{useful symbols}
+
+  \begin{itemize}
+    \item Sums: $ \sum_{i=0}^n i $ and $ \displaystyle \sum_{i=0}^n i^2$ (displaystyle essentially makes it larger)
+    \item Product: $ \prod_{i=0}^n i $ and $\displaystyle \prod_{i=0}^n i^2 $
+    \item Choose: ${n \choose k}$ and $\displaystyle {n \choose k}$
+    \item big fractions: $\dfrac{\sum_{i=0}^n abcdefghi}{ \prod_{j=0}^n j^2 }$
+  \end{itemize}
+
+
+\end{document}

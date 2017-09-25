@@ -1,0 +1,143 @@
+<head>
+
+	%include templates/parts/head.html
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.1.0/math.min.js"></script>
+	<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						A Titanic Probability
+					</h1>
+					<p>
+						Thanks to Kaggle and encyclopedia-titanica for the dataset. 
+					</p>
+					
+
+				</div>
+				<hr/>
+			</div>
+		</div>
+
+		
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					This is a question of <a href="{{pathToRoot}}psets/pset5.html">Problem set 5</a>. In this problem you will use real data from the Titanic to calculate conditional probabilities and expectations.
+				</p>
+				
+				<p>
+					<div class="row">
+						<div class="col-sm-6">
+						<iframe width="100%" height="250" src="https://www.youtube.com/embed/3lyiZMeTKIo" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="col-sm-6">
+						<iframe width="100%" height="250" src="https://www.youtube.com/embed/ItjXTieWKyI" frameborder="0" allowfullscreen></iframe>
+					</div>
+					</div>
+
+					<center><i>tldr: the ship sinks</i></center>
+				</p>
+
+
+				<div class="row">
+			<div class="col-sm-9">
+				<p>
+					  On April 15, 1912, the largest passenger liner ever made collided with an iceberg during her maiden voyage. When the Titanic sank it killed 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships. 
+One of the reasons that the shipwreck resulted in such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others.
+				</p>
+
+
+
+				
+				
+				<p>
+					The <a href="stuff/titanic.csv">titanic.csv</a> file contains data for 887 of the real Titanic passengers. Each row represents one person. The columns describe different attributes about the person including whether they survived ($S$), their age ($A$), their passenger-class ($C$), their sex ($G$) and the fare they paid ($X$).
+				</p>
+				<p>
+				 [Quetion12] Write a program that <b>reads the data file</b> and finds the answers to the following questions:
+					
+				</p>
+
+				<p>
+					<ol type="a">
+						<li>Calculate the conditional probability that a person survives given their sex and passenger-class:<br/>
+							$P(S=\text{ true | } G = \text{female}, C = 1)$<br/>
+						$P(S=\text{ true | } G = \text{female}, C = 2)$<br/>
+						$P(S=\text{ true | } G = \text{female}, C = 3)$<br/>
+						$P(S=\text{ true | } G = \text{male}, C = 1)$<br/>
+						$P(S=\text{ true | } G = \text{male}, C = 2)$<br/>
+						$P(S=\text{ true | } G = \text{male}, C = 3)$</li>
+						<li>What is the probability that a child who is in third class and is 10 years old or younger survives? Since the number of data points that satisfy the condition is small use the "bayesian" approach and represent your probability as a beta distribution. Calculate a belief distribution for: <br/>$S=\text{ true | } A &leq; 10, C = 3$<br/>. Report the prior belief that you used and your final answer as parameterized distributions.</li>
+						<li>How much did people pay to be on the ship? Calculate the expectation of  fare conditioned on passenger-class:<br/>
+							$E[X \text{ | } C = 1]$<br/>
+						$E[X  \text{ | } C = 2]$<br/>
+						$E[X \text{ | } C = 3]$</li>
+				</ol>
+				</p>
+
+				<p>
+					You only have to submit your answers, not your program. 
+
+
+				<p>
+					Aside: In making this problem I learned that there were somewhere between 80 and 153 passengers from present day Lebanon (then Ottoman Empire) on the Titanic. That would be 7% of the people aboard. 
+				</p>
+			</div>
+			<div class="col-sm-3">
+
+				<center>
+							<a href="stuff/titanic.csv">Titanic Dataset<br/><span class="glyphicon glyphicon-save-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span>
+					</a>
+							</center>
+							<br/><br/>
+							Dataset columns:
+				<ul class="list-group">
+  <li class="list-group-item">0: Survived Indicator</li>
+  <li class="list-group-item">1: Passenger Class</li>
+  <li class="list-group-item">2: Name</li>
+  <li class="list-group-item">3: Sex</li>
+  <li class="list-group-item">4: Age</li>
+  <li class="list-group-item">5: Siblings Aboard</li>
+  <li class="list-group-item">6: Parents Aboard</li>
+  <li class="list-group-item">7: Fare paid in &pound;s</li>
+</ul>
+			</div>
+		</div>
+
+		<hr/>
+
+		<h3>Extensions?</h3>
+		<p>See if you can find something suprising in the dataset. Can you predict p? Can you find interesting correlations?</p>
+
+			</div>
+		</div>
+		
+		
+				
+		
+
+
+	
+
+		%include templates/parts/footer.html
+
+	</div>
+
+	
+
+</body>

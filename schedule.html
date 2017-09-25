@@ -1,0 +1,570 @@
+<head>
+
+<title>CS109</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+
+<link href="plugins/bootstrap-custom/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Java Script -->
+<script src="plugins/jquery.min.js"></script>
+<script src="plugins/moment.min.js"></script>
+<script src="plugins/bootstrap-custom/js/bootstrap.min.js"></script>
+<script src="plugins/ace/ace.js" type="text/javascript"></script>
+
+<!-- Probability Packages -->
+<script src="plugins/probability/gaussian.js"></script>
+<script src="plugins/color.js"></script>
+
+
+<!-- Stanford -->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand brand" href="/">CS109</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lectures <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+          </ul>
+        </li>-->
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lecture Notes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+
+            <li><a href="pdfs/02 Counting.pdf">1 - Counting</a></li>
+            <!--<li><a href="lectureHandouts/2 Combinatorics.pdf">2 - Combinatorics</a></li>
+            <li><a href="lectureHandouts/3 Probability.pdf">3 - Probability</a></li>
+            <li><a href="lectureHandouts/4 Conditional Probability.pdf">4 - Conditional Probability</a></li>
+            <li><a href="lectureHandouts/5 Independence.pdf">5 - Independence</a></li>
+            <li><a href="lectureHandouts/6 Random Variables.pdf">6 - Random Variables</a></li>
+            <li><a href="lectureHandouts/7 Variance.pdf">7 - Variance</a></li>
+            <li><a href="lectureHandouts/8 More Discrete.pdf">8 - Poisson and More</a></li>
+            <li><a href="lectureHandouts/9 Continuous Variables.pdf">9 - Continuous Variables</a></li>
+             <li><a href="lectureHandouts/10 Gauss.pdf">10 - Gauss</a></li>
+             <li><a href="lectureHandouts/11 Exponential and Joint.pdf">11 - Exponential and Joint</a></li>
+             <li><a href="lectureHandouts/12 Continuous and Multinomial Joint.pdf">12 - Continuous and Multinomial Joint</a></li>
+             <li><a href="lectureHandouts/13 Properties of Joint Distributions.pdf">13 - Properties of Joint Distributions</a></li>
+             <li><a href="lectureHandouts/14 Convolution and Conditional.pdf">14 -  Convolution and Conditional</a></li>
+             <li><a href="lectureHandouts/15 Beta.pdf">15 -  Beta</a></li>
+             <li><a href="lectureHandouts/16 Great Expectations.pdf">16 -  Great Expectations</a></li>
+             <li><a href="lectureHandouts/17 Covariance and Correlation.pdf">17 - Covariance and Correlation</a></li>
+             <li><a href="lectureHandouts/18 Samples and Bootstrap.pdf">18 - Samples</a></li>
+             <li><a href="lectureHandouts/19 CLT.pdf">19 - CLT</a></li>
+             <li><a href="lectureHandouts/20 MLE.pdf">20 - MLE</a></li>
+             <li><a href="lectureHandouts/21 MAP.pdf">21 - MAP</a></li>
+             <li><a href="lectureHandouts/22 Naive Bayes.pdf">22 - Naive Bayes</a></li>
+             <li><a href="lectureHandouts/23 Logistic Regression.pdf">23 - Logistic Regression</a></li>
+              <li><a href="lectureHandouts/24 Deep Learning.pdf">24 - Deep Learning</a></li>-->
+            
+            
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Problem Sets<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+
+             <li><a>None Yet</a></li>
+
+             
+           
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <li><a href="pdfs/01 Administrivia.pdf">Administrivia</a></li>
+           
+
+          </ul>
+        </li>
+
+
+
+        
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>None Yet</a></li>
+
+          </ul>
+        </li>
+
+        <li><a href="handouts/staff.html">Office Hours</a></li>
+       
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="schedule.html"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Schedule</a></li>
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="container">
+            
+        <!-- Header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="pageHeader">
+                    <h1>
+                        Course Schedule
+                    </h1>
+                    
+
+                </div>
+                <hr/>
+            </div>
+        </div>
+                
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    The class starts by providing a fundamental grounding in combinatorics, and then quickly moves into the basics of probability theory. We will then cover many essential concepts in probability theory, including particular probability distributions, properties of probabilities, and mathematical tools for analyzing probabilities. Finally, the last third of the class will focus on data analysis and Machine Learning as a means for seeing direct applications of probability in this exciting and quickly growing subfield of computer science.
+                </p>
+               
+
+                <div class="alert alert-info"><b>Note on slides:</b> In class I sometimes use slides to facilitate lecture. On their own they are not a great study resource. Here is a <a href="lectures">link to the slides directory</a> in case you have use for them.
+                </div>
+
+                 <p>
+                    The schedule is subject to change by the management at any time.
+                </p>
+
+                <!--<div class="row">
+                    <div class="col-sm-3">
+                        <button class="btn btn-info">Topic</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-info">Week</button>
+                    </div>
+                </div>-->
+                                
+                <p>
+<div class="table-responsive">
+<table class="table table-bordered">
+<thead>
+   <tr>
+      <th style="col-sm-3">Week</th>
+      <th style="col-sm-3">Monday</th>
+      <th style="col-sm-3">Wednesday</th>
+      <th style="col-sm-3">Friday</th>
+   </tr>
+</thead>
+<tr>
+<td class="calendarWeekCell">1</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Ch. 1.1 - 1.2</div>
+         <p class="subtleHeading">Sept 25th</p>
+         Counting<br/><br/>
+         <p class="lectureMaterials">
+
+<a href="lectures/1-Welcome.pdf"><span class="sidebaricon glyphicon glyphicon-blackboard" aria-hidden="true" title="pdf"></span> Slides</a><br/>
+<a href="pdfs/02 Counting.pdf"><span class="sidebaricon glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span> Lecture Notes</a><br/>
+<a href="pdfs/01 Administrivia.pdf"><span class="sidebaricon glyphicon glyphicon-apple" aria-hidden="true" title="pdf"></span> Administrivia</a>
+
+   </p>
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Ch. 1.3 - 1.6</div>
+         <p class="subtleHeading">Sept 27th</p>
+         Permutations and Combinations
+
+
+        
+   </p>
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Ch. 2.1 - 2.5, 2.7</div>
+         <p class="subtleHeading">Sept 29th</p>
+         Axioms of Probability<br/><br/>
+
+
+
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">2</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Chapter 3.1-3.3</div>
+         <p class="subtleHeading">Oct 2nd</p>
+         Conditional Probability,
+         Bayes Theorem
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Lecture Handout</div>
+         <p class="subtleHeading">Oct 4th</p>
+         Independence<br/><br/>
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br>Due: PSet #1<br>Chapter 3.4-3.5</div>
+         <p class="subtleHeading">Oct 6th</p>
+         Random Variables<br/><br/>
+
+   
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">3</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 4.1-4.4</div>
+         <p class="subtleHeading">Oct 9th</p>
+         Variance, Bernoulli and Binomial
+
+   
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 4.5-4.6</div>
+         <p class="subtleHeading">Oct 11th</p>
+         Poisson and More<br/><br/>
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 4.7-4.10</div>
+         <p class="subtleHeading">Oct 13th</p>
+         Continuous Random Variables<br/><br/>
+
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">4</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br>Due PSet #2<br>Read: Chapter 5.1-5.3</div>
+         <p class="subtleHeading">Oct 16th</p>
+         Normal Distribution<br/><br/>
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 5.4-5.6</div>
+         <p class="subtleHeading">Oct 18th</p>
+         Joint Distributions<br/><br/>
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 6.1</div>
+         <p class="subtleHeading">Oct 20th</p>
+         Continuous Joint Distributions<br/><br/>
+
+
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">5</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 6.2-6.3</div>
+         <p class="subtleHeading">Oct 23rd</p>
+         Properties of Joint Distributions
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br>Due: PSet #3<br>Read: Chapter 6.4-6.5</div>
+         <p class="subtleHeading">Oct 25th</p>
+         Convolution and Joint Conditional
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 7.1-7.2</div>
+         <p class="subtleHeading">Oct 27th</p>
+         Beta Distributions<br/><br/>
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">6</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 7.3-7.4</div>
+         <p class="subtleHeading">Oct 30th</p>
+         Great Expectations
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br>Midterm: Thursday, Nov 2nd<br>Read: Chapter 7.5-7.6   </div>
+         <p class="subtleHeading">Nov 1st</p>
+         Covariance and Correlation
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 7.7</div>
+         <p class="subtleHeading">Nov 3rd</p>
+         Samples
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">7</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Chapter 8.1-8.2, 8.5</div>
+         <p class="subtleHeading">Nov 6th</p>
+         Central Theorems
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br>Due: PSet #4<br>Read: Chapter 8.3-8.4</div>
+         <p class="subtleHeading">Nov 8th</p>
+         Parameters and MLE
+
+      
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Lecture Handout</div>
+         <p class="subtleHeading">Nov 10th</p>
+         Maximum A Posteriori
+
+
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">8</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Lecture Handout</div>
+         <p class="subtleHeading">Nov 13th</p>
+         Naive Bayes
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br>Read: Lecture Handout</div>
+         <p class="subtleHeading">Nov 15th</p>
+         Logistic Regression
+
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br>Due: PSet #5<br>Read: Lecture Handout</div>
+         <p class="subtleHeading">Nov 17th</p>
+         Intro to Deep Learning
+
+
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">9</td>
+
+   <td class="calendarCell" style="background-color:hsl(0, 0%, 95%)">
+      <div style="position:relative">
+         <div class="inOut"></div>
+         <p class="subtleHeading">Nov 20th</p>
+         <p>Thanksgiving<br/>No class</p>
+
+      </div>
+   </td>
+
+   <td class="calendarCell" style="background-color:hsl(0, 0%, 95%)">
+      <div style="position:relative">
+         <div class="inOut"><br><br></div>
+         <p class="subtleHeading">Nov 22nd</p>
+         <p>Thanksgiving<br/>No class</p>
+
+
+      </div>
+   </td>
+
+   <td class="calendarCell" style="background-color:hsl(0, 0%, 95%)">
+      <div style="position:relative">
+         <div class="inOut"><br><br></div>
+         <p class="subtleHeading">Nov 24th</p>
+         <p>Thanksgiving<br/>No class</p>
+
+      </div>
+   </td>
+<tr>
+<td class="calendarWeekCell">10</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br></div>
+         <p class="subtleHeading">Nov 27th</p>
+         CS109 Overview
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br/><br/></div>
+         <p class="subtleHeading">Nov 29th</p>
+         Deep Learning II
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br/><br/></div>
+         <p class="subtleHeading">Dec 1st</p>
+         Probabilistic Graphical Models
+      </div>
+   </td>
+
+<tr>
+<td class="calendarWeekCell">11</td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br><br></div>
+         <p class="subtleHeading">Dec 4th</p>
+         CS109 Overview
+      </div>
+   </td>
+
+   <td class="calendarCell">
+      <div style="position:relative">
+         <div class="inOut"><br/><br/></div>
+         <p class="subtleHeading">Dec 6th</p>
+         Final Review
+      </div>
+   </td>
+
+   <td class="calendarCell" style="background-color:hsl(0, 0%, 95%)">
+      <div style="position:relative">
+         <div class="inOut"><br/><br/>Due: PSet #6</div>
+         <p class="subtleHeading">Dec 8tb</p>
+         <p>Dead Day<br/>No class</p>
+      </div>
+   </td>
+
+</table>
+</div>                </p>
+            </div>
+        </div>
+
+
+    
+
+
+
+<div class="row">
+	<div class="col-md-12">
+		<hr>
+
+		<div class="footer">
+			<p class="pull-left">
+				&#169; Stanford 2017 &#124; Created by 
+				<a href="http://stanford.edu/~cpiech">Chris</a>.
+				CS109 has been developed by many talented teachers. Special thanks to Mehran Sahami.
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74362126-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    </div>
+
+    <script type="text/javascript">
+        $( ".moment" ).each(function( i ) {
+            var date = $(this).html()
+
+            var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+            $(this).html(fromStr)
+          });
+        //alert(moment("20160101", "YYYYMMDD").fromNow())
+    </script>
+
+</body>

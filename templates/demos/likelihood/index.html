@@ -1,0 +1,94 @@
+<html>
+<head>
+
+    %include templates/parts/head.html
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.1.0/math.min.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <style>
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+        }
+        .area {
+            fill: lightsteelblue;
+            stroke-width: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    %include templates/parts/navBar.html
+
+    <div class="container">
+            
+        <!-- Header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="pageHeader">
+                    <h1>
+                        Likelihood of Data from a Normal
+                    </h1>
+                
+                </div>
+                <hr/>
+
+                <table align="center" border="0" cellspacing="0" width="710" height="320" bordercolordark="white" bordercolorlight="black">
+    <tr>
+        <td>
+            <p align="left"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0" width="700" height="310">
+            <param name="movie" value="e_likelihood_1.swf">
+            <param name="play" value="true">
+            <param name="loop" value="true">
+            <param name="quality" value="high">
+            <embed src="e_likelihood_1.swf" play="true" loop="true" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="700" height="310"></embed>
+            </object></p>
+        </td>
+    </tr>
+</table>
+<p class="TexteGlossaire">The likelihood is the product of the heights of all 
+the green&nbsp;connections from the sample&nbsp;points to the gaussian curve.</p>
+<p class="TexteGlossaire">The posted value is the ratio of the current likelihood 
+to the largest possible likelihood.</p>
+<p class="TexteGlossaire">&nbsp;To fit &nbsp;the candidate normal distribution 
+to the sample :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Translate it by translating 
+the top of the curve with your mouse,</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Change its width (standard 
+deviation) by translating either side of the curve with your mouse.</p>
+<p class="TexteGlossaire">Fine-tune the position and width of the curve by clicking 
+and keeping&nbsp;your mouse button down :</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* Above the top of the curve 
+to make it taller (and therefore narrower),</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* In the area below the curve 
+to make it shorter (and therefore wider),</p>
+<p class="TexteGlossaire">&nbsp;&nbsp;&nbsp;&nbsp;* On either side of the curve 
+to translate it.
+
+            </div>
+        </div>
+
+                
+
+        %include templates/parts/footer.html
+
+    </div>
+
+</body>
+
+
+</html>

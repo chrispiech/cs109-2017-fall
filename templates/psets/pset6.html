@@ -1,0 +1,103 @@
+<head>
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Pset 6: Machine Learning. 
+					</h1>
+					<p class="subtleHeading"><span class="sidebaricon glyphicon glyphicon-calendar" aria-hidden="true"></span>Due: Wednesday, June 7th, 10:30A.M.
+				</p>
+
+				</div>
+				<hr/>
+
+				<center>
+				<img style="width:80%" src="{{pathToRoot}}img/psets/pset6.png">	
+				<p style="text-align:center"><i>Deep Learning derivations, Naive Bayes and Logistic Regression implementation.</i>
+			</center>
+			</div>
+		</div>
+
+
+		
+		
+				
+		<div class="row">
+			<div class="col-sm-12">
+				
+
+				
+				<h2>Resources</h2>
+				<hr/>
+				<p>
+					<div class="row">
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset6.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:20px">PSet</p></a>
+						</div>
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset6.zip"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:13px">Datasets</p></a>
+						</div>
+
+
+						
+					</div>
+					<br/>
+				</p>
+
+				<h2>Errata</h2>
+					<hr/>
+				<p>
+					<div class="alert alert-info"><b>Note:</b> since parts of this pset are new there may be questions or issues that come up. We will keep a list of them here.</div>
+				</p>
+
+				<p>
+					<ul class="list-group">
+					 
+					  <li class="list-group-item">
+					 	<b>Update to coding problem 1</b>: A few hours after we released the pset, we decided to break problem (b) into two parts so that you didn't have to repeat everything for both MLE and Laplace estimators. If you downloaded the pset on Friday May 26th, make sure that you the problems your problem (b) and (c) have the right number of subparts
+					 </li>
+
+					 <li class="list-group-item">
+					 	<b>Update to dataset</b>: The Netflix train/test files were missing header lines. Header lines have been added.
+					 </li>
+					 
+					
+					</ul>
+				</p>
+
+			</div>
+		</div>
+
+
+	
+
+		%include templates/parts/footer.html
+
+	</div>
+
+	<script type="text/javascript">
+		$( ".moment" ).each(function( i ) {
+			var date = $(this).html()
+
+			var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+			$(this).html(fromStr)
+		  });
+		//alert(moment("20160101", "YYYYMMDD").fromNow())
+	</script>
+
+</body>

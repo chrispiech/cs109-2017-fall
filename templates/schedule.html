@@ -1,0 +1,74 @@
+<head>
+
+    %include templates/parts/head.html
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    %include templates/parts/navBar.html
+
+    <div class="container">
+            
+        <!-- Header -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="pageHeader">
+                    <h1>
+                        Course Schedule
+                    </h1>
+                    
+
+                </div>
+                <hr/>
+            </div>
+        </div>
+                
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    The class starts by providing a fundamental grounding in combinatorics, and then quickly moves into the basics of probability theory. We will then cover many essential concepts in probability theory, including particular probability distributions, properties of probabilities, and mathematical tools for analyzing probabilities. Finally, the last third of the class will focus on data analysis and Machine Learning as a means for seeing direct applications of probability in this exciting and quickly growing subfield of computer science.
+                </p>
+               
+
+                <div class="alert alert-info"><b>Note on slides:</b> In class I sometimes use slides to facilitate lecture. On their own they are not a great study resource. Here is a <a href="{{pathToRoot}}lectures">link to the slides directory</a> in case you have use for them.
+                </div>
+
+                 <p>
+                    The schedule is subject to change by the management at any time.
+                </p>
+
+                <!--<div class="row">
+                    <div class="col-sm-3">
+                        <button class="btn btn-info">Topic</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button class="btn btn-info">Week</button>
+                    </div>
+                </div>-->
+                                
+                <p>
+                    %include templates/parts/scheduleWeek.html
+                </p>
+            </div>
+        </div>
+
+
+    
+
+        %include templates/parts/footer.html
+
+    </div>
+
+    <script type="text/javascript">
+        $( ".moment" ).each(function( i ) {
+            var date = $(this).html()
+
+            var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+            $(this).html(fromStr)
+          });
+        //alert(moment("20160101", "YYYYMMDD").fromNow())
+    </script>
+
+</body>

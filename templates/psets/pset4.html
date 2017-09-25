@@ -1,0 +1,105 @@
+<head>
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Pset 4: Joint Variables
+					</h1>
+					<p class="subtleHeading"><span class="sidebaricon glyphicon glyphicon-calendar" aria-hidden="true"></span>Due: Wednesday, May 17th, 10:30A.M.
+				</p>
+
+				</div>
+				<hr/>
+
+				<center>
+				<img style="width:80%" src="{{pathToRoot}}img/psets/pset4.png">	
+				<p style="text-align:center"><i>Warmups, deeper questions, dithering, biometric keystrokes and climate sensitivity</i>
+			</center>
+			</div>
+		</div>
+
+
+		
+		
+				
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					The midterm is on Tuesday, May 9th, which is before the date when this problem set is due. All of these problems, except problem 8, are good practice and cover material that is fair game for the midterm. 
+					
+				</p>
+
+				<!--
+				Problem set #2 is out! A few of the problems require you to process data. The <a href="{{pathToRoot}}psets/pset2.zip"><span class="sidebaricon glyphicon glyphicon-list-alt" aria-hidden="true"></span> datasets are now availible</a>.
+			-->
+
+				
+				<h2>Resources</h2>
+				<hr/>
+				<p>
+					<div class="row">
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset4.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:20px">PSet</p></a>
+						</div>
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}psets/pset4.zip"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+					<p style="margin-left:13px">Datasets</p></a>
+						</div>
+
+						
+					</div>
+					<br/>
+				</p>
+
+				<h2>Errata</h2>
+					<hr/>
+				<p>
+					<div class="alert alert-info"><b>Note:</b> since parts of this pset are new there may be questions or issues that come up. We will keep a list of them here.</div>
+				</p>
+
+				<p>
+					<ul class="list-group">
+					 <li class="list-group-item">
+					 	<b>Update to problem 10</b>: I had failed to specify that the prior belief (the belief held before observing the email) is that the email was equally likely to have been written by person A and person B. The question was updated on May 5th at 3pm.
+					 </li>
+					  
+					 
+					
+					</ul>
+				</p>
+
+			</div>
+		</div>
+
+
+	
+
+		%include templates/parts/footer.html
+
+	</div>
+
+	<script type="text/javascript">
+		$( ".moment" ).each(function( i ) {
+			var date = $(this).html()
+
+			var fromStr = moment(date, "YYYYMMDD").fromNow()
+
+			$(this).html(fromStr)
+		  });
+		//alert(moment("20160101", "YYYYMMDD").fromNow())
+	</script>
+
+</body>
