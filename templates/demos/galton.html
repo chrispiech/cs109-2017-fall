@@ -1,0 +1,55 @@
+<head>
+
+	%include templates/parts/head.html
+
+
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						Galton Board
+					</h1>
+					<p class="subtleHeading">
+						October 12th, 2017
+					</p>
+					
+
+				</div>
+				<hr/>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+
+				
+				
+				<p data-height="365" data-theme-id="dark" data-slug-hash="dVjjQy" data-default-tab="result" data-user="piech" data-embed-version="2" data-pen-title="Galton board" class="codepen">See the Pen <a href="https://codepen.io/piech/pen/dVjjQy/">Galton board</a> by Chris Piech (<a href="https://codepen.io/piech">@piech</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+				<hr/>
+
+				<p>
+				Let $B$ be the bucket index that a ball falls into. If you think about it, in a Galton Board, the bucket index is equal to the number of times that a ball goes "right". If it goes right 0 times, it falls into bucket 0. If it goes right 8 times, it falls into bucket 8.
+
+				<p>Every ball has 8 chances to go right, and each chance has equal probability of going right or left. If we consider going "right" as a success, we can cast our variable $B$ into the language of a Binomial Random Variable. $B$ equals the number of "successes" in 8 independent trials.
+
+				<p>Thus $B$ ~ Bin($n$=8, $p$ = 0.5). We can use the probability mass function of a Binomial to predict the probability of any ball falling into a bucket (which is the same as the fraction of balls that will fall in the bucket).
+			</div>
+		</div>
+
+		%include templates/parts/footer.html
+
+	</div>
+
+</body>

@@ -25,8 +25,22 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
 
+<!-- Math Jax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<script src="//web.stanford.edu/class/cs109/plugins/math.min.js"></script>
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+	<link rel="stylesheet" href="//web.stanford.edu/class/cs109/css/galton.css">
+	<script src="//web.stanford.edu/class/cs109/js/matter.js"></script>
+	<script src="//web.stanford.edu/class/cs109/js/galton.js"></script>
+
 </head>
 <body>
+
+	
 
 	<!-- Navigation Bar -->
 <nav class="navbar navbar-inverse">
@@ -106,6 +120,7 @@
           <ul class="dropdown-menu">
             <li><a href="//web.stanford.edu/class/cs109/demos/serendipity.html">Serendipity</a></li>
             <li><a href="//web.stanford.edu/class/cs109/demos/naturalBayes.html">Medical Tests</a></li>
+            <li><a href="//web.stanford.edu/class/cs109/demos/galton.html">Galton Board</a></li>
           </ul>
         </li>
 
@@ -302,147 +317,165 @@
 			<div class="col-sm-9" >
 				<!-- Newsfeed -->
 
-				<div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">Python Tutorial (2/2)</div>
-                        <div class="moment">2017100414</div>
-                    </div>
-
-                    <p>
-                    	There will be a second and final optional Python tutorial led by TA Yuling Liu, Friday (Oct 6th) from 4:30pm-5:20pm in 370-370. If you missed the first review session, you can catch up by reading 
-                    	<a href="https://github.com/yulingl/cs109_python_tutorial/blob/master/cs109_python_tutorial.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span> Yuling's awesome notes</a>.
-
-                    	<p> In this section we are going to go over Python libraries that are useful for probability. Again, python is not required for CS109. However a few problems in the psets require coding and seeing as Python is the language of computer science for probability, its worth learning. 
-                    </p>
-
-                </div>
-
-				<div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">Join Gradescope</div>
-                        <div class="moment">2017092714</div>
-                    </div>
-
-                    <p>
-                    	Our gradescope page is live! The entry code is MP5GG5.
- 					</p>
- 					<p>
-						If you're new to Gradescope, you can join the class by going to https://gradescope.com/ and clicking the button in the top right marked "Sign Up for Free." Select "Student," then enter the entry code, your full name, email address, and 8 digit student id. 
- 					</p>
- 					<p>
-						If you have any questions, feel free to post on Piazza.
-                    </p>
-
-                </div>
-
-				<div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">Sign up for Section!</div>
-                        <div class="moment">2017092714</div>
-                    </div>
-
-                    <p>
-                        Please sign up for section by filling out this form: <br/><a href="https://goo.gl/forms/nEpp2D2ZNQkG0sH22">https://goo.gl/forms/nEpp2D2ZNQkG0sH22</a>. 
-					<p>
-                        Once a week you are going to meet in a small group section. We are going to find the best weekly time for everyone. Section sign ups will close on Saturday at 11:59pm. Preferences are not first come first serve.
-                    </p>
-
-                    
-
-                </div>
 
 
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">Galton Board</div>
+        <div class="moment">2017101210</div>
+    </div>
 
-				<div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">PSet #1 is out</div>
-                        <div class="moment">2017092714</div>
-                    </div>
+    <p>
+        A Galton board is a physical Binomial distribution where the bucket index that a ball falls into R ~ Bin(n,p) where n is the number of levels and p is the probability of going right each time the ball hits a pin. Check out the <a href="//web.stanford.edu/class/cs109/demos/galton.html"><span class="glyphicon glyphicon-apple" aria-hidden="true" title="pdf"></span> JavaScript demo</a>, and the cool video bellow:<br/>
 
-                    <p>
-                        <a href="//web.stanford.edu/class/cs109/pdfs/ProblemSet1.pdf">PSet #1</a> has been released! It is due next Firday, Oct 6th at 3:00pm. Submission will be via gradescore. Further submission instructions will come out next week. Office hours will start tomorrow -- see the office hour calendar for times and locations. 
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/9xUBhhM4vbM" frameborder="0" allowfullscreen></iframe>
+    </p>
 
-                        <p>
-                        	You can optionally write up your problem sets using LaTex. See this <a href="stuff/intro.pdf">intro</a> to LaTex, and the <a href="stuff/intro.tex">LaTex code</a> used to generate it. Though you may install LaTeX, it is often much easier to use an online LaTeX editor. Two good options are: <a href="www.overleaf.com">overleaf.com</a> and <a href="www.sharelatex.com">sharelatex.com</a>.
-                    </p>
+</div>
 
-                    
+<hr/>
+<p class="subtleHeading">Old Announcements</p>
 
-                </div>
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">Python Tutorial (2/2)</div>
+        <div class="moment">2017100414</div>
+    </div>
 
-                <div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">Python Tutorial</div>
-                        <div class="moment">2017092714</div>
-                    </div>
+    <p>
+    	There will be a second and final optional Python tutorial led by TA Yuling Liu, Friday (Oct 6th) from 4:30pm-5:20pm in 370-370. If you missed the first review session, you can catch up by reading 
+    	<a href="https://github.com/yulingl/cs109_python_tutorial/blob/master/cs109_python_tutorial.ipynb"><span class="glyphicon glyphicon-file" aria-hidden="true" title="pdf"></span> Yuling's awesome notes</a>.
 
-                    <p>
-                        There will be an optional Python tutorial led by TA Yuling Liu, Friday (Sept 29th) from 4:30pm-5:20pm in 370-370. This will be the first of a two part series which will get you caught up to python in case you have never used it before. Python is not required for CS109. However a few problems in the psets require coding and seeing as Python is the language of computer science for probability, its worth learning. We will record the session.
-                    </p>
+    	<p> In this section we are going to go over Python libraries that are useful for probability. Again, python is not required for CS109. However a few problems in the psets require coding and seeing as Python is the language of computer science for probability, its worth learning. 
+    </p>
 
-                    
+</div>
 
-                </div>
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">Join Gradescope</div>
+        <div class="moment">2017092714</div>
+    </div>
 
-                <div class="well">
-						<div class="newsfeedHeader">
-							<div class="newsfeedTitle">NYT Article on Stats</div>
-							<div class="moment">2017092714</div>
-						</div>
-						<p>
-							 </p><div class="media">
-							  <div class="media-left">
-							    <div style="width:80px;">
-							      <img class="media-object" src="https://s0.wp.com/wp-content/themes/vip/nytimes-witw/img/global/nyt-t-logo.png" style="width:80px">
-							    </div>
-							  </div>
-							  <div class="media-body">
-							    An article from the New York Times discusses the increasing importance of statistics in computing. The article is entitled <a href="http://www.nytimes.com/2009/08/06/technology/06stats.html">For Today's Graduate, Just One Word: Statistics</a>. On a similar vein, The Wall Street Journal published an article entitled <a href="http://www.wsj.com/articles/SB10001424052702304871704575160553254798886">New Hiring Formula Values Math Pros</a> talking about how employers are seeking computer scientists with training in statistics and probability. CS109 is specifically mentioned.
-							  </div>
-							</div>
-						<p></p>
-					</div>
+    <p>
+    	Our gradescope page is live! The entry code is MP5GG5.
+		</p>
+		<p>
+		If you're new to Gradescope, you can join the class by going to https://gradescope.com/ and clicking the button in the top right marked "Sign Up for Free." Select "Student," then enter the entry code, your full name, email address, and 8 digit student id. 
+		</p>
+		<p>
+		If you have any questions, feel free to post on Piazza.
+    </p>
 
-				<hr/>
+</div>
 
-				
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">Sign up for Section!</div>
+        <div class="moment">2017092714</div>
+    </div>
 
-				<div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">What is CS109?</div>
-                        <div class="moment">2017092400</div>
-                    </div>
+    <p>
+        Please sign up for section by filling out this form: <br/><a href="https://goo.gl/forms/nEpp2D2ZNQkG0sH22">https://goo.gl/forms/nEpp2D2ZNQkG0sH22</a>. 
+	<p>
+        Once a week you are going to meet in a small group section. We are going to find the best weekly time for everyone. Section sign ups will close on Saturday at 11:59pm. Preferences are not first come first serve.
+    </p>
 
-                    <p>
-                        We put together some handouts to help you understand where we are going to go in CS109 and how we plan to get there. See the <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> <a href="//web.stanford.edu/class/cs109/pdfs/Administrivia.pdf">Administrivia</a> handout for details on logistics.
-                    </p>
+    
 
-                    <p>
-                     The <span class="glyphicon glyphicon-th-large" aria-hidden="true" title="pdf"></span> <a href="//web.stanford.edu/class/cs109/schedule.html">Course Schedule</a> page shows you the topics that we are going to cover in CS109 and the corresponding readings. We will also post materials from lecture on the schedule page.
-                    
-                    </p>
+</div>
 
-                </div>
 
-                
 
-                <div class="well">
-                    <div class="newsfeedHeader">
-                        <div class="newsfeedTitle">Welcome</div>
-                        <div class="moment">2017092400</div>
-                    </div>
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">PSet #1 is out</div>
+        <div class="moment">2017092714</div>
+    </div>
 
-                    <p>
-                    Welcome to CS109! We are looking forward to a fun quarter. Class starts Monday Sept 25th at 3:30pm in Hewlett 200.
-                    <div class="mapOverlay" onClick="style.pointerEvents='none'"></div>
-                    <div class="google-maps">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.0863441837398!2d-122.1733848707886!3d37.428944998738984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb2ae177cc91%3A0x5351ffed56456da8!2sWilliam+R.+Hewlett+Teaching+Center%2C+370+Serra+Mall%2C+Stanford%2C+CA+94305!5e0!3m2!1sen!2sus!4v1506354839576" width="567" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <p>
+        <a href="//web.stanford.edu/class/cs109/pdfs/ProblemSet1.pdf">PSet #1</a> has been released! It is due next Firday, Oct 6th at 3:00pm. Submission will be via gradescore. Further submission instructions will come out next week. Office hours will start tomorrow -- see the office hour calendar for times and locations. 
 
-                    </div>
-                    </p>
+        <p>
+        	You can optionally write up your problem sets using LaTex. See this <a href="stuff/intro.pdf">intro</a> to LaTex, and the <a href="stuff/intro.tex">LaTex code</a> used to generate it. Though you may install LaTeX, it is often much easier to use an online LaTeX editor. Two good options are: <a href="www.overleaf.com">overleaf.com</a> and <a href="www.sharelatex.com">sharelatex.com</a>.
+    </p>
 
-                </div>
-					
+    
+
+</div>
+
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">Python Tutorial</div>
+        <div class="moment">2017092714</div>
+    </div>
+
+    <p>
+        There will be an optional Python tutorial led by TA Yuling Liu, Friday (Sept 29th) from 4:30pm-5:20pm in 370-370. This will be the first of a two part series which will get you caught up to python in case you have never used it before. Python is not required for CS109. However a few problems in the psets require coding and seeing as Python is the language of computer science for probability, its worth learning. We will record the session.
+    </p>
+
+    
+
+</div>
+
+<div class="well">
+		<div class="newsfeedHeader">
+			<div class="newsfeedTitle">NYT Article on Stats</div>
+			<div class="moment">2017092714</div>
+		</div>
+		<p>
+			 </p><div class="media">
+			  <div class="media-left">
+			    <div style="width:80px;">
+			      <img class="media-object" src="https://s0.wp.com/wp-content/themes/vip/nytimes-witw/img/global/nyt-t-logo.png" style="width:80px">
+			    </div>
+			  </div>
+			  <div class="media-body">
+			    An article from the New York Times discusses the increasing importance of statistics in computing. The article is entitled <a href="http://www.nytimes.com/2009/08/06/technology/06stats.html">For Today's Graduate, Just One Word: Statistics</a>. On a similar vein, The Wall Street Journal published an article entitled <a href="http://www.wsj.com/articles/SB10001424052702304871704575160553254798886">New Hiring Formula Values Math Pros</a> talking about how employers are seeking computer scientists with training in statistics and probability. CS109 is specifically mentioned.
+			  </div>
+			</div>
+		<p></p>
+	</div>
+
+<hr/>
+
+
+
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">What is CS109?</div>
+        <div class="moment">2017092400</div>
+    </div>
+
+    <p>
+        We put together some handouts to help you understand where we are going to go in CS109 and how we plan to get there. See the <span class="glyphicon glyphicon-apple" aria-hidden="true"></span> <a href="//web.stanford.edu/class/cs109/pdfs/Administrivia.pdf">Administrivia</a> handout for details on logistics.
+    </p>
+
+    <p>
+     The <span class="glyphicon glyphicon-th-large" aria-hidden="true" title="pdf"></span> <a href="//web.stanford.edu/class/cs109/schedule.html">Course Schedule</a> page shows you the topics that we are going to cover in CS109 and the corresponding readings. We will also post materials from lecture on the schedule page.
+    
+    </p>
+
+</div>
+
+
+
+<div class="well">
+    <div class="newsfeedHeader">
+        <div class="newsfeedTitle">Welcome</div>
+        <div class="moment">2017092400</div>
+    </div>
+
+    <p>
+    Welcome to CS109! We are looking forward to a fun quarter. Class starts Monday Sept 25th at 3:30pm in Hewlett 200.
+    <div class="mapOverlay" onClick="style.pointerEvents='none'"></div>
+    <div class="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.0863441837398!2d-122.1733848707886!3d37.428944998738984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fbb2ae177cc91%3A0x5351ffed56456da8!2sWilliam+R.+Hewlett+Teaching+Center%2C+370+Serra+Mall%2C+Stanford%2C+CA+94305!5e0!3m2!1sen!2sus!4v1506354839576" width="567" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    </div>
+    </p>
+
+</div>					
 			</div>
 		</div>
 
