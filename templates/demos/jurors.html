@@ -99,7 +99,7 @@
 					Technically, since jurors are selected without replacement, you should represent the number of under-representative jurors as being a Hyper Geometric Random Variable (a random variable we don't look at explicitely in CS109) st 
 				</p>
 				<p>
-					\begin{align*}X \sim HypGeo(n=12, N = 1000, m = 60)\end{align*}
+					\begin{align*}X \sim \text{HypGeo}(n=12, N = 1000, m = 60)\end{align*}
 				</p>
 				<p>
 					\begin{align*} 
@@ -110,16 +110,18 @@
 
 				</p>
 
-				<p>However Justic Breyer made his case by citing a Binomial distribution. This isn't a perfect use of binomial, because the binomial assumes that each experiments has equal likelihood ($p$) of success. Because the jurors are selected without replacement, the probability changes slightly. However, as we will see, because the probabilities don't change too much the binomial distribution is not too far off.
+				<p>However Justic Breyer made his case by citing a Binomial distribution. This isn't a perfect use of binomial, because the binomial assumes that each experiment has equal likelihood ($p$) of success. Because the jurors are selected without replacement, the probability of getting a minority juror changes slightly after each selection (and depending on what the selection was). However, as we will see, because the probabilities don't change too much the binomial distribution is not too far off.
 				</p>
 
 				<p>
-					\begin{align*}X \sim Binomial(n=12, p = 60/1000)\end{align*}
+					\begin{align*}
+					X \sim \text{Binomial}(n=12, p = 60/1000)
+					\end{align*}
 				</p>
 				<p>
 					\begin{align*} 
 						P(X \geq 1) &= 1 - P(X = 0) \\
-									&= 1 - \frac{ {60 \choose 0}(1- 0.06)^{12}\\
+									&= 1 - {60 \choose 0}(1- 0.06)^{12} \\
 									&\approx 0.5241
 					\end{align*} 
 
