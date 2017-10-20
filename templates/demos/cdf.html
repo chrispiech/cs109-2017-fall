@@ -65,7 +65,7 @@
 				  <div class="form-group">
 				    <label for="inputPassword3" class="col-sm-4 control-label">mu: </label>
 				    <div class="col-sm-4">
-				      <input type="number" class="form-control" id="inputMu" value="0">
+				      <input type="number" class="form-control" id="inputMu" value="1">
 				    </div>
 				  </div>
 				  </form>
@@ -73,7 +73,7 @@
 				  <div class="form-group">
 				    <label for="inputPassword3" class="col-sm-4 control-label">std: </label>
 				    <div class="col-sm-4">
-				      <input type="number" class="form-control" id="inputStd" value="1">
+				      <input type="number" class="form-control" id="inputStd" value="2">
 				    </div>
 				  </div>
 				 </form>
@@ -84,14 +84,20 @@
 				</p>
 				
 
-				<div id="hidden" style="display:none">
+				<div id="hidden">
 					<hr/>
 					<h2>Explination</h2>
+					<p>This function calculates the cumulative density function of a Normal random variable. It is very important in CS109 to understand the difference between a probability density function (PDF), and a cumulative density function (CDF). The CDF of a random variable at point little $x$ is equal to the probability that the random variable takes on a value less than or equal to $x$. If the random variable is called big $X$, the CDF can be written as $P(X < x)$ or as $F_X(x)$.
+					<p> The CDF function of a Normal is calculated by translating the random variable to the Standard Normal, and then looking up a value from the precalculated "Phi" function ($\Phi$), which is the cumulative density function of the standard normal. The Standard Normal, often written $Z$, is a Normal with mean 0 and variance 1. Thus, $Z \sim N(\mu = 0, \sigma^2 = 1)$.
+					</p>
 					<div id="resultDiv">
 					</div>
+					<p>Try different calculations to see different translations to the standard normal!
 					<hr/>
 							<h2>Standard Normal PDF</h2>
-							<div style="width:370px; height:370px;" id="pdfDiv"></div>
+							<p>The normal transform means that the probability that you are calculating is identical to the integral over the PDF of the Standard Normal from negative infinity to $x$. This picture shows that integral: 
+							<p>
+							<div style="width:470px; height:370px;" id="pdfDiv"></div>
 				</div>
 				
 
@@ -105,6 +111,10 @@
 				
 		<script>
 
+			$( document ).ready(function(){
+				calculate()
+			});
+
 			function calculate() {
 				var x = $("#inputX").val()
 				var mu = $("#inputMu").val()
@@ -113,9 +123,9 @@
 				var result = dist.cdf(x).toFixed(4);
 				console.log(result)
 
-				var part1 = "<p>Let $X \\sim \\mathcal{N}(\\mu = " + mu + ", \\sigma = " + std + ")$</p>"
+				var part1 = "<p>For your normal $X \\sim \\mathcal{N}(\\mu = " + mu + ", \\sigma = " + std + ")$</p>"
 
-				var part2 = "<p>$P(X < " + x + ") = \\Phi\\left(\\frac{"+x+" - "+mu+"}{"+std+"}\\right) = " + result +"$</p>"
+				var part2 = "<p>$P(X < " + x + ") = P(\\frac{X - \\mu}{\\sigma} < \\frac{"+x+"-\\mu}{\\sigma}) = P(Z < \\frac{"+x+" - "+mu+"}{"+std+"}) = \\Phi\\left(\\frac{"+x+" - "+mu+"}{"+std+"}\\right) = " + result +"$</p>"
 
 				$("#resultDiv").html(part1 + part2)
 				$("#numResult").html("= " + result)
@@ -160,7 +170,7 @@
 				var xAxis = d3.svg.axis()
 				    .scale(x)
 				    .orient("bottom")
-				    .tickValues(range(xMin, xMax, xStep))
+				    .tickValues(range(xMin, xMax, 1))
 				    
 				var yTicks = range(0, maxP * 1.2, maxP/9)
 				var yAxis = d3.svg.axis()
