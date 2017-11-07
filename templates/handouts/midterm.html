@@ -1,0 +1,81 @@
+<head>
+
+	%include templates/parts/head.html
+
+</head>
+<body>
+
+	<!-- Navigation Bar -->
+	%include templates/parts/navBar.html
+
+	<div class="container">
+			
+		<!-- Header -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="pageHeader">
+					<h1>
+						CS109 Midterm
+					</h1>
+					
+
+				</div>
+				<hr/>
+			</div>
+		</div>
+
+		
+
+		<div class="row">
+			<div class="col-sm-12">
+				<p>
+					<h2>Midterm</h2>
+					<div class="row">
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}pdfs/Midterm.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+							<p style="margin-left:10px">Midterm</p></a>
+						</div>
+
+						<div class="col-sm-2">
+							<a href="{{pathToRoot}}restricted/Midterm.pdf"><span class="glyphicon glyphicon-file" aria-hidden="true" style="font-size: 5em;margin-left:5px"></span><br>
+							<p style="margin-left:0px">Midterm Soln</p></a>
+						</div>
+
+					</div>
+				</p>
+				<p>
+					<h2>Midterm PDF</h2>
+					<center>
+						<img style="width:80%" src="{{pathToRoot}}img/midterm/midtermDist.png">	
+						
+					</center>
+				</p>
+				<p>
+					<h2>Midterm CDF</h2>
+					<center>
+						<img style="width:80%" src="{{pathToRoot}}img/midterm/midtermCdf.png">	
+						
+					</center>
+				</p>
+				<p>
+					<h2>Midterm Correlation Matrix</h2>
+					<center>
+						<img style="width:80%" src="{{pathToRoot}}img/midterm/midtermCorr.png">	
+						<p style="text-align:center"><i>Midterm Correlation Matrix</i>
+					</center>
+				</p>
+			</div>
+		</div>
+		
+		
+				
+		
+
+
+	
+
+		%include templates/parts/footer.html
+
+	</div>
+
+</body>
